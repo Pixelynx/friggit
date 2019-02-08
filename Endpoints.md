@@ -20,7 +20,7 @@
     * Retrieves specific user and their posts
     * `/home` Loads signed in user's home page
     * `/submit` Loads create post page for signed in user
-    * `/user/"Naminggit"/create` Loads create sub-"Naminggit" page for signed in user
+    * `/"Naminggit"/create` Loads create sub-"Naminggit" page for signed in user
     
   * `POST /user/username`
     * `/submit` Creates new post
