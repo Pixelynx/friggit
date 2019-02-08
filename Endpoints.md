@@ -1,4 +1,4 @@
-# Still Naminggit
+# Subbit (Name subject to change)
 
 ---
 
@@ -20,11 +20,11 @@
     * Retrieves specific user and their posts
     * `/home` Loads signed in user's home page
     * `/submit` Loads create post page for signed in user
-    * `/"Naminggit"/create` Loads create sub-"Naminggit" page for signed in user
+    * `/subbit/create` Loads create sub-subbit page for signed in user
     
   * `POST /user/username`
     * `/submit` Creates new post
-    * `/user/"Naminggit"/create` Creates new sub-"Naminggit" community
+    * `/user/subbit/create` Creates new sub-subbit community
     
   * `PUT /user/username`
     * Updates user information
@@ -39,7 +39,7 @@
     * `/n/all` Loads all posts
     * `/n/popular` Loads most popular posts [based on upvotes]
     * `/original` Loads Original content posts
-    * `/n/sub-"naminggit"/post_title` Loads specific "naminggit" post
+    * `/n/sub-"naminggit"/post_title` Loads specific subbit post
 
   * `POST /`
 
@@ -59,7 +59,7 @@
     * `/n/all` 
     * `/n/popular` 
     * `/original` 
-    * `/n/sub-"naminggit"/post_title` 
+    * `/n/sub-subbit/post_title` 
 
   * `POST /`
 
