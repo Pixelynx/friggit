@@ -5,9 +5,9 @@
 | Column Name  | Data Type | Details |
 | ------------- | ------------- | ------------- |
 | id | integer | not null, primary key |
-| username | string | not null, indexed, unique |
+| username | string | not null, unique |
 | display_name | string  | |
-| email | string | not null, indexed, unique |
+| email | string | not null, unique |
 | password | string | not null |
 | link_twitter | boolean | not null |
 | about | text | |
