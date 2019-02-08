@@ -39,7 +39,7 @@
     * `/n/all` Loads all posts
     * `/n/popular` Loads most popular posts [based on upvotes]
     * `/original` Loads Original content posts
-    * `/n/sub-"naminggit"/post_title` Loads specific subbit post
+    * `/n/sub-subbit/post_title` Loads specific subbit post
 
   * `POST /`
 
