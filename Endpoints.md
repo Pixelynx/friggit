@@ -52,3 +52,22 @@
   * `DELETE /`
     * text 
     
+ ### Comments
+
+  * `GET /comments`
+
+    * `/n/all` 
+    * `/n/popular` 
+    * `/original` 
+    * `/n/sub-"naminggit"/post_title` 
+
+  * `POST /`
+
+    * `/ ` 
+    * `/ ` 
+    
+  * `PUT /`
+    * text
+    
+  * `DELETE /`
+    * text 
