@@ -17,7 +17,14 @@
 | Column Name  | Data Type | Details |
 | ------------- | ------------- | ------------- |
 | id | integer | not null, primary key |
-| user_id | integer | not null, foreign key |
+| user_id | integer | not null, foreign key, cascade |
+
+## Sub-subbits
+---
+| Column Name | Data Type | Details |
+| ------------- | ------------- | ------------- |
+| id | integer | not null, primary key |
+| admin_id | integer | not null, foreign key |
 
 ## Comments
 ---
@@ -25,10 +32,8 @@
 | ------------- | ------------- | ------------- |
 | id | integer | not null, primary key |
 | user_id | integer | not null, foreign key |
-| | | |
-| | | |
-| | | |
-| | | |
+| post_id| integer |not null, foreign key, cascade |
+| sub_id | integer | not null, foreign key, cascade |
 | | | |
 
 ## Posts
@@ -37,9 +42,27 @@
 | ------------- | ------------- | ------------- |
 | id  | integer  | not null, primary key |
 | user_id | integer | not null, foreign key |
-| | | |
-| | | |
-| | | |
-| | | |
+| title | string | not null |
+| body | text | not null |
+| sub_id | integer | not null, foreign key, cascade |
+| thumbnail | string | |
+| oc | boolean | not null |
+| spoiler | boolean | not null |
+| nsfw | boolean | not null |
 | | | |
 
+## Upvote
+---
+| Column Name  | Data Type | Details |
+| ------------- | ------------- | ------------- |
+| id  | integer  | not null, primary key |
+| post_id | integer | not null, foreign key |
+| comment_id | integer | foreign key |
+
+## Downvote
+---
+| Column Name  | Data Type | Details |
+| ------------- | ------------- | ------------- |
+| id  | integer  | not null, primary key |
+| post_id | integer | not null, foreign key |
+| comment_id | integer | foreign key |
