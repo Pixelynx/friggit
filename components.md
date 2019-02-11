@@ -13,6 +13,7 @@
   
 ### Log In
   * LogIn
+   * UserAuth
 
 ### Sign Up
 * SignUp
