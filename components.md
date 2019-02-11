@@ -6,7 +6,7 @@
 
 ### Home
 * SignInUpHome
- * 
+ * CategoryNav
 * SignedInHome
   * SubcribedPosts
   * RecentPosts
@@ -30,6 +30,9 @@
 ## Bonus
 ---
 
+### Home
+  * CurrentCategoryPages
+  
 ### Trending
   * Trending
 
