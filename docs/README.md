@@ -33,7 +33,7 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
 * **Objective:**
     * Set up Log in/Sign up pages
     * Setting up sign up validation
-    * Setting up log in authorization
+    * Setting up log in authentication
     * Set up user backend
     
 ## Phase 3: Community Pages Connected with Backend (4 Days)
