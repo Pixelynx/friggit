@@ -6,18 +6,13 @@
 
 ### Home
 * SignInUpHome
+ * 
 * SignedInHome
   * SubcribedPosts
   * RecentPosts
-
-### Trending
-  * Trending
   
 ### Log In
   * LogIn
-  * Forgot
-    * ForgotPassword
-    * ForgotUsername
 
 ### Sign Up
 * SignUp
@@ -26,11 +21,22 @@
 
 ### Posts 
 * AllPosts
-* PopularPosts
 * OCPosts
 * NSFWPosts
 
-### Sub-Subbits
+### Community Pages
 * SubPage
 
+## Bonus
+---
 
+### Trending
+  * Trending
+
+### Log In
+  * Forgot
+   * ForgotPassword
+   * ForgotUsername
+
+### Posts
+ * PopularPosts
