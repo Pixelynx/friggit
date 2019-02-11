@@ -23,7 +23,7 @@
 # Implementation Timeline
 ---
 
-## Phase 1: Main Homepage (2 Day)
+## Phase 1: Main Homepage (2 Days)
 * **Objective:** 
     * Set home main homepage design
     
@@ -60,7 +60,8 @@
 * Organize posts by popularity (upvotes)
 * Customize profile
 * Follow Communities
-* Create community moderators
+* Admin functionality for community pages
+* Create moderator functionality for community pages
 * Block users
 * Ban users from community
 
