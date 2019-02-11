@@ -28,6 +28,7 @@
 
 # Bonus Features
 ---
+* Search bar functionality
 * User can up/downvote posts/comments
 * Trending communities
 * Organize posts by popularity (upvotes)
