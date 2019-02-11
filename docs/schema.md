@@ -19,7 +19,7 @@
 | id | integer | not null, primary key |
 | user_id | integer | not null, foreign key, cascade |
 
-## Sub-subbits
+## Community Pages
 ---
 | Column Name | Data Type | Details |
 | ------------- | ------------- | ------------- |
