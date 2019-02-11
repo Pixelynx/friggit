@@ -15,7 +15,7 @@
 
 ## Design Docs
 ---
-* [Wireframes](./wireframes/)
+* [Wireframes](./wireframe/)
 * [Endpoints](./endpoints.md)
 * [Components](./components.md)
 * [Schema](./schema.md)
