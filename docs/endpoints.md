@@ -34,40 +34,57 @@
     
  ### Posts
 
-  * `GET /posts`
+  * `GET /`
 
-    * `/n/all` Loads all posts
-    * `/n/popular` Loads most popular posts [based on upvotes]
-    * `/original` Loads Original content posts
-    * `/n/sub-subbit/post_title` Loads specific subbit post
+    * `/n/all` Loads "All" posts
+    * `/original` Loads "Original Content" posts
+    * `/n/community/post_title` Loads specific community posts
 
   * `POST /`
 
-    * `/ ` 
-    * `/ ` 
+    * `/n`
+     * Creates community page
+    * `/n/community`
+     * Creates post within community 
     
   * `PUT /`
-    * text
+  
+    * `/n/community/post_title`
+     * Edits post within specific community page
+    * `/original/post_title`
+     * Edits post within OC page
     
   * `DELETE /`
-    * text 
+  
+    * `/n/community/post_title`
+     * Deletes post within specific community page
+    * `/original/post_title`
+     * Deletes post from OC page
     
  ### Comments
 
-  * `GET /comments`
+  * `GET /`
 
-    * `/n/all` 
-    * `/n/popular` 
-    * `/original` 
-    * `/n/sub-subbit/post_title` 
+    * `/n/community/comments/post_title` 
+     * Gets post and comments from post within specific community page
+    * `/original/comments?post_title` 
+     * Gets post and comments from post within OC page
 
   * `POST /`
 
-    * `/ ` 
-    * `/ ` 
+    * `/n/community/comments/post_title` 
+     * Posts comment on post within specific community page
+    * `/original/comments?post_title` 
+     * Posts comment on post within OC page 
     
   * `PUT /`
-    * text
+    * `/n/community/comments/post_title` 
+     * Edits comment on post within specific community page
+    * `/original/comments?post_title` 
+     * Edits comment on post within OC page 
     
   * `DELETE /`
-    * text 
+    * `/n/community/comments/post_title` 
+     * Deletes comment from post within specific community page
+    * `/original/comments?post_title` 
+     * Deletes comment from post within OC page
