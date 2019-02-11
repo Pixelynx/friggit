@@ -13,7 +13,7 @@
   
 ### Log In
   * LogIn
-   * UserAuth
+    * UserAuth
 
 ### Sign Up
 * SignUpForm
@@ -37,8 +37,8 @@
 
 ### Log In
   * Forgot
-   * ForgotPassword
-   * ForgotUsername
+    * ForgotPassword
+    * ForgotUsername
 
 ### Posts
  * PopularPosts
