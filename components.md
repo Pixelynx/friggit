@@ -16,9 +16,7 @@
    * UserAuth
 
 ### Sign Up
-* SignUp
-* SignUpValidation
-* SignedUpConfirmation
+* SignUpForm
 
 ### Posts 
 * AllPosts
@@ -26,7 +24,7 @@
 * NSFWPosts
 
 ### Community Pages
-* SubPage
+* SubPage (Still mentally fleshing out this section.)
 
 ## Bonus
 ---
