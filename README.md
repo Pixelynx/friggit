@@ -23,6 +23,9 @@
 # Implementation Timeline
 ---
 
+## Phase 1: Frontend: Log In Homepage and Backend Setup for Community Pages
+* **Objective:** Set up main homepage design and backend for community pages
+
 # Bonus Features
 ---
 * User can up/downvote posts/comments
