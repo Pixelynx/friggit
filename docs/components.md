@@ -29,6 +29,9 @@
 ## Bonus
 ---
 
+## Navigation
+ * Search bar
+
 ### Home
   * CurrentCategoryPages
   
