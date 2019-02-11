@@ -14,10 +14,10 @@
 
 ## Design Docs
 ---
-* [Wireframes] (.framework/wireframes/)
-* [Endpoints] (./endpoints.md)
-* [Components] (./components.md)
-* [Schema] (./schema.md)
+* [Wireframes](.framework/wireframes/)
+* [Endpoints](./endpoints.md)
+* [Components](./components.md)
+* [Schema](./schema.md)
 
 # Implementation Timeline
 ---
