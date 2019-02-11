@@ -23,12 +23,38 @@
 # Implementation Timeline
 ---
 
-## Phase 1: Frontend: Log In Homepage and Backend Setup for Community Pages
-* **Objective:** Set up main homepage design and backend for community pages
+## Phase 1: Main Homepage (2 Day)
+* **Objective:** 
+    * Set home main homepage design
+    
+## Phase 2: Log in/Sign up Pages and Backend (4 Days)
+* **Objective:**
+    * Set up Log in/Sign up pages
+    * Setting up sign up validation
+    * Setting up log in authorization
+    * Set up user backend
+    
+## Phase 3: Community Pages Connected with Backend (4 Days)
+ * **Objective:**
+    * Community backend
+    * User ability to create community
+    * Display community on user profile
+    * Ability to delete community page
+    * Edit post functionality
+    
+## Phase 4: Connect Community Pages/Posts on Other Pages (3 Days)
+* **Objective:**
+    * Display community pages on homepage
+    * Create tabs for all/oc/nsfw pages and display community pages accordingly
+    
+## Phase 5: Comment Functionality on Posts (2 Days)
+* **Objective:**
+    * Add ability to comment on posts
+    * Comment delete functionality
+    * Comment edit functionality
 
 # Bonus Features
 ---
-* Search bar functionality
 * User can up/downvote posts/comments
 * Trending communities
 * Organize posts by popularity (upvotes)
