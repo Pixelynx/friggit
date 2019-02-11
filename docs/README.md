@@ -4,6 +4,8 @@
 ## Minimum Viable Product
 ---
 
+Subbit (name change pending) is a clone of the Reddit website using JavaScript, PostgreSql, React (and maybe Redux). By the end, this project will be able to accomplish the following functionality similarily found on Reddit:
+
 * Signing/Logging in/out
 * Sign up
 * Viewing community posts
