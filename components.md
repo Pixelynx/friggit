@@ -6,7 +6,7 @@
 
 ### Home
 * SignInUpHome
- * CategoryNav
+  * CategoryNav
 * SignedInHome
   * SubcribedPosts
   * RecentPosts
