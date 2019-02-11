@@ -5,6 +5,7 @@
 ---
 
 * Signing/Logging in/out
+* Sign up
 * Viewing community posts
 * Creating communities
 * Creating posts
