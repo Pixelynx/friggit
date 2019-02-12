@@ -55,20 +55,20 @@
   * `GET /`
 
     * `/n/subtriggit/comments/post_title` Gets post and comments from post within specific subtriggit page
-    * `/original/comments?post_title` Gets post and comments from post within OC page
+    * `/original/comments/post_title` Gets post and comments from post within OC page
 
   * `POST /`
 
     * `/n/subtriggit/comments/post_title` Posts comment on post within specific subtriggit page
-    * `/original/comments?post_title` Posts comment on post within OC page
+    * `/original/comments/post_title` Posts comment on post within OC page
 
   * `PUT /`
     * `/n/subtriggit/comments/post_title` Edits comment on post within specific subtriggit page
-    * `/original/comments?post_title` Edits comment on post within OC page
+    * `/original/comments/post_title` Edits comment on post within OC page
 
   * `DELETE /`
     * `/n/subtriggit/comments/post_title` Deletes comment from post within specific subtriggit page
-    * `/original/comments?post_title` Deletes comment from post within OC page
+    * `/original/comments/post_title` Deletes comment from post within OC page
 
 ### subtriggit
 
