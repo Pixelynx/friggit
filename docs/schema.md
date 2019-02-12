@@ -26,6 +26,13 @@
 | id | integer | not null, primary key |
 | admin_id | integer | not null, foreign key |
 
+## Subscriptions
+---
+| Column Name | Data Type | Details |
+| ------------- | ------------- | ------------- |
+| user_id | integer | not null, foreign key |
+| page_id | integer | not null, foreign key |
+
 ## Comments
 ---
 | Column Name  | Data Type | Details |
