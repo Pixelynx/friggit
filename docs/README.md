@@ -10,6 +10,7 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
 * Sign up
 * Viewing community posts
 * Creating communities
+* Subscribing to communities
 * Creating posts
 * Commenting on posts
 * Editing posts
@@ -54,6 +55,11 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
     * Add ability to comment on posts
     * Comment delete functionality
     * Comment edit functionality
+    
+## Phase 6: Subscription functionality (3 Days)
+* **Objective:**
+    * Add ability for users to subscribe/unaubscribe from community pages
+    * Add functionality to display posts for subscribed community on user homepage
 
 # Bonus Features
 ---
