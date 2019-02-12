@@ -1,16 +1,16 @@
-# Subbit (Name subject to change)
+# Triggit
 ---
 
 ## Minimum Viable Product
 ---
 
-Subbit (name change pending) is a clone of the Reddit website using JavaScript, PostgreSql, React (and maybe Redux). By the end, this project will be able to accomplish the following functionality similarily found on Reddit:
+Triggit is a clone of the Reddit website using JavaScript, PostgreSql, React (and maybe Redux). By the end, this project will be able to accomplish the following functionality similarily found on Reddit:
 
 * Signing/Logging in/out
 * Sign up
-* Viewing community posts
-* Creating communities
-* Subscribing to communities
+* Viewing sub-triggit posts
+* Creating sub-triggits
+* Subscribing to sub-triggits
 * Creating posts
 * Commenting on posts
 * Editing posts
@@ -37,18 +37,18 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
     * Setting up log in authentication
     * Set up user backend
     
-## Phase 3: Community Pages Connected with Backend (4 Days)
+## Phase 3: Sub-Triggit Pages Connected with Backend (4 Days)
  * **Objective:**
-    * Community backend
-    * User ability to create community
-    * Display community on user profile
-    * Ability to delete community page
+    * Sub-Triggit backend
+    * User ability to create Sub-Triggits
+    * Display Sub-Triggits on user profile
+    * Ability to delete Sub-Triggit page
     * Edit post functionality
     
-## Phase 4: Connect Community Pages/Posts on Other Pages (3 Days)
+## Phase 4: Connect Sub-Triggit Pages/Posts on Other Pages (3 Days)
 * **Objective:**
-    * Display community pages on homepage
-    * Create tabs for all/oc/nsfw pages and display community pages accordingly
+    * Display Sub-Triggit pages on homepage
+    * Create tabs for all/oc/nsfw pages and display Sub-Triggit pages accordingly
     
 ## Phase 5: Comment Functionality on Posts (2 Days)
 * **Objective:**
@@ -58,18 +58,17 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
     
 ## Phase 6: Subscription Functionality (3 Days)
 * **Objective:**
-    * Add ability for users to subscribe/unsubscribe from community pages
-    * Add functionality to display posts for subscribed community on user homepage
+    * Add ability for users to subscribe/unsubscribe from Sub-Triggit pages
+    * Add functionality to display posts for subscribed Sub-Triggit on user homepage
 
 # Bonus Features
 ---
 * User can up/downvote posts/comments
-* Trending communities
+* Trending Sub-Triggits
 * Organize posts by popularity (upvotes)
 * Customize profile
-* Follow Communities
-* Admin functionality for community pages
-* Create moderator functionality for community pages
+* Admin functionality for Sub-Triggit pages
+* Create moderator functionality for Sub-Triggit pages
 * Block users
-* Ban users from community
+* Ban users from Sub-Triggit
 
