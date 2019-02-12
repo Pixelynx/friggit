@@ -56,9 +56,9 @@ Subbit (name change pending) is a clone of the Reddit website using JavaScript, 
     * Comment delete functionality
     * Comment edit functionality
     
-## Phase 6: Subscription functionality (3 Days)
+## Phase 6: Subscription Functionality (3 Days)
 * **Objective:**
-    * Add ability for users to subscribe/unaubscribe from community pages
+    * Add ability for users to subscribe/unsubscribe from community pages
     * Add functionality to display posts for subscribed community on user homepage
 
 # Bonus Features
