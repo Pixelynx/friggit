@@ -1,4 +1,4 @@
-# Components 
+# Components
 ---
 
 ### Navigation
@@ -10,7 +10,7 @@
 * SignedInHome
   * SubcribedPosts
   * RecentPosts
-  
+
 ### Log In
   * LogIn
     * UserAuth
@@ -18,12 +18,12 @@
 ### Sign Up
 * SignUpForm
 
-### Posts 
+### Posts
 * AllPosts
 * OCPosts
 * NSFWPosts
 
-### Community Pages
+### Sub-Triggit Pages
 * SubPage (Still mentally fleshing out this section.)
 
 ## Bonus
@@ -34,7 +34,7 @@
 
 ### Home
   * CurrentCategoryPages
-  
+
 ### Trending
   * Trending
 

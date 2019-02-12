@@ -19,7 +19,7 @@
 | id | integer | not null, primary key |
 | user_id | integer | not null, foreign key, on delete cascade |
 
-## Community Pages
+## Sub-Triggit Pages
 ---
 | Column Name | Data Type | Details |
 | ------------- | ------------- | ------------- |
@@ -40,7 +40,7 @@
 | id | integer | not null, primary key |
 | user_id | integer | not null, foreign key, on delete null |
 | post_id| integer |not null, foreign key, on delete cascade |
-| community_id | integer | not null, foreign key, on delete cascade |
+| Sub-Triggit_id | integer | not null, foreign key, on delete cascade |
 
 ## Posts
 ---
@@ -50,7 +50,7 @@
 | user_id | integer | not null, foreign key |
 | title | string | not null |
 | body | text | not null |
-| community_id | integer | not null, foreign key, on delete cascade |
+| Sub-Triggit_id | integer | not null, foreign key, on delete cascade |
 | thumbnail | string | |
 | oc | boolean | not null |
 | spoiler | boolean | not null |
