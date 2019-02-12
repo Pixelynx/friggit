@@ -1,4 +1,4 @@
-# Subbit (Name subject to change)
+# Triggit
 
 ---
 
