@@ -19,7 +19,6 @@
     * `/username` Retrieves specific user and their posts
     * `/home` Loads signed in user's home page
     * `/submit` Loads create post page for signed in user
-    * `/subscriptions` Loads signed in users subscribed communities
     
   * `POST /user/username`
     * `/submit` Creates new post
