@@ -23,7 +23,7 @@
 * OCPosts
 * NSFWPosts
 
-### Sub-Triggit Pages
+### Sub-Diggit Pages
 * SubPage (Still mentally fleshing out this section.)
 
 ## Bonus

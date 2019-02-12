@@ -1,4 +1,4 @@
-# Triggit
+# Diggit
 
 ---
 
@@ -33,54 +33,54 @@
 
     * `/n/all` Loads "All" posts
     * `/original` Loads "Original Content" posts
-    * `/n/subtriggit/post_title` Loads specific subtriggit posts
+    * `/n/subDiggit/post_title` Loads specific subDiggit posts
 
   * `POST /`
 
-    * `/n` Creates subtriggit page
-    * `/n/subtriggit` Creates post within subtriggit
+    * `/n` Creates subDiggit page
+    * `/n/subDiggit` Creates post within subDiggit
 
   * `PUT /`
 
-    * `/n/subtriggit/post_title` Edits post within specific subtriggit page
+    * `/n/subDiggit/post_title` Edits post within specific subDiggit page
     * `/original/post_title` Edits post within OC page
 
   * `DELETE /`
 
-    * `/n/subtriggit/post_title` Deletes post within specific subtriggit page
+    * `/n/subDiggit/post_title` Deletes post within specific subDiggit page
     * `/original/post_title` Deletes post from OC page
 
  ### Comments
 
   * `GET /`
 
-    * `/n/subtriggit/comments/post_title` Gets post and comments from post within specific subtriggit page
+    * `/n/subDiggit/comments/post_title` Gets post and comments from post within specific subDiggit page
     * `/original/comments/post_title` Gets post and comments from post within OC page
 
   * `POST /`
 
-    * `/n/subtriggit/comments/post_title` Posts comment on post within specific subtriggit page
+    * `/n/subDiggit/comments/post_title` Posts comment on post within specific subDiggit page
     * `/original/comments/post_title` Posts comment on post within OC page
 
   * `PUT /`
-    * `/n/subtriggit/comments/post_title` Edits comment on post within specific subtriggit page
+    * `/n/subDiggit/comments/post_title` Edits comment on post within specific subDiggit page
     * `/original/comments/post_title` Edits comment on post within OC page
 
   * `DELETE /`
-    * `/n/subtriggit/comments/post_title` Deletes comment from post within specific subtriggit page
+    * `/n/subDiggit/comments/post_title` Deletes comment from post within specific subDiggit page
     * `/original/comments/post_title` Deletes comment from post within OC page
 
-### subtriggit
+### subDiggit
 
 * `GET /`
-  * `/n/subtriggit` Retrieves posts within specific subtriggit page
-  * `/n/subtriggit/users` Retrieves all users subscribed to subtriggit page
+  * `/n/subDiggit` Retrieves posts within specific subDiggit page
+  * `/n/subDiggit/users` Retrieves all users subscribed to subDiggit page
 
 * `POST /'
-  * `/n` Creates new subtriggit page
+  * `/n` Creates new subDiggit page
 
 * `PUT /`
-  * `/n/subtriggit` Edit subtriggit page (admin only)
+  * `/n/subDiggit` Edit subDiggit page (admin only)
 
 * `DELETE /`
-  * `/n/subtriggit` Deletes subtriggit page (admin only)
+  * `/n/subDiggit` Deletes subDiggit page (admin only)
