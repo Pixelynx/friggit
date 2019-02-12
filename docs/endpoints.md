@@ -20,11 +20,9 @@
     * Retrieves specific user and their posts
     * `/home` Loads signed in user's home page
     * `/submit` Loads create post page for signed in user
-    * `/subbit/create` Loads create sub-subbit page for signed in user
     
   * `POST /user/username`
     * `/submit` Creates new post
-    * `/user/subbit/create` Creates new sub-subbit community
     
   * `PUT /user/username`
     * Updates user information
@@ -88,3 +86,23 @@
      * Deletes comment from post within specific community page
     * `/original/comments?post_title` 
      * Deletes comment from post within OC page
+     
+### Community
+
+* `GET /`
+  * `/n/community`
+   * Retrieves posts within specific community page
+  * `/n/community/users`
+   * Retrieves all users suscribed to community page
+   
+* `POST /'
+  * `/n`
+   * Creates new community page
+   
+* `PUT /`
+  * `/n/community`
+   * Edit community page (admin only)
+   
+* `DELETE /`
+  * `/n/community`
+   * Deletes community page (admin only)
