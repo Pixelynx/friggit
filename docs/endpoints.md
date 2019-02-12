@@ -8,27 +8,25 @@
 
 ### Root
 
-  * `GET /`
-    * Loads landing page
+  * `GET /` Loads landing page
     
  ## AJAX API
 
 ---
 
 ### User
-  * `GET /user/username`
-    * Retrieves specific user and their posts
+  * `GET /`
+    * `/username` Retrieves specific user and their posts
     * `/home` Loads signed in user's home page
     * `/submit` Loads create post page for signed in user
+    * `/subscriptions` Loads signed in users subscribed communities
     
   * `POST /user/username`
     * `/submit` Creates new post
     
-  * `PUT /user/username`
-    * Updates user information
+  * `PUT /user/username` Updates user information
 
-  * `DELETE /user/username`
-    * Deletes user
+  * `DELETE /user/username` Deletes user
     
  ### Posts
 
@@ -40,69 +38,50 @@
 
   * `POST /`
 
-    * `/n`
-     * Creates community page
-    * `/n/community`
-     * Creates post within community 
+    * `/n` Creates community page
+    * `/n/community` Creates post within community 
     
   * `PUT /`
   
-    * `/n/community/post_title`
-     * Edits post within specific community page
-    * `/original/post_title`
-     * Edits post within OC page
+    * `/n/community/post_title` Edits post within specific community page
+    * `/original/post_title` Edits post within OC page
     
   * `DELETE /`
   
-    * `/n/community/post_title`
-     * Deletes post within specific community page
-    * `/original/post_title`
-     * Deletes post from OC page
+    * `/n/community/post_title` Deletes post within specific community page
+    * `/original/post_title` Deletes post from OC page
     
  ### Comments
 
   * `GET /`
 
-    * `/n/community/comments/post_title` 
-     * Gets post and comments from post within specific community page
-    * `/original/comments?post_title` 
-     * Gets post and comments from post within OC page
+    * `/n/community/comments/post_title` Gets post and comments from post within specific community page
+    * `/original/comments?post_title` Gets post and comments from post within OC page
 
   * `POST /`
 
-    * `/n/community/comments/post_title` 
-     * Posts comment on post within specific community page
-    * `/original/comments?post_title` 
-     * Posts comment on post within OC page 
+    * `/n/community/comments/post_title` Posts comment on post within specific community page
+    * `/original/comments?post_title` Posts comment on post within OC page 
     
   * `PUT /`
-    * `/n/community/comments/post_title` 
-     * Edits comment on post within specific community page
-    * `/original/comments?post_title` 
-     * Edits comment on post within OC page 
+    * `/n/community/comments/post_title` Edits comment on post within specific community page
+    * `/original/comments?post_title` Edits comment on post within OC page 
     
   * `DELETE /`
-    * `/n/community/comments/post_title` 
-     * Deletes comment from post within specific community page
-    * `/original/comments?post_title` 
-     * Deletes comment from post within OC page
+    * `/n/community/comments/post_title` Deletes comment from post within specific community page
+    * `/original/comments?post_title` Deletes comment from post within OC page
      
 ### Community
 
 * `GET /`
-  * `/n/community`
-   * Retrieves posts within specific community page
-  * `/n/community/users`
-   * Retrieves all users suscribed to community page
+  * `/n/community` Retrieves posts within specific community page
+  * `/n/community/users` Retrieves all users suscribed to community page
    
 * `POST /'
-  * `/n`
-   * Creates new community page
+  * `/n` Creates new community page
    
 * `PUT /`
-  * `/n/community`
-   * Edit community page (admin only)
+  * `/n/community` Edit community page (admin only)
    
 * `DELETE /`
-  * `/n/community`
-   * Deletes community page (admin only)
+  * `/n/community` Deletes community page (admin only)
