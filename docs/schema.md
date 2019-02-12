@@ -17,7 +17,7 @@
 | Column Name  | Data Type | Details |
 | ------------- | ------------- | ------------- |
 | id | integer | not null, primary key |
-| user_id | integer | not null, foreign key, cascade |
+| user_id | integer | not null, foreign key, on delete cascade |
 
 ## Community Pages
 ---
@@ -39,7 +39,7 @@
 | ------------- | ------------- | ------------- |
 | id | integer | not null, primary key |
 | user_id | integer | not null, foreign key, on delete null |
-| post_id| integer |not null, foreign key, cascade, on delete cascade |
+| post_id| integer |not null, foreign key, on delete cascade |
 | community_id | integer | not null, foreign key, on delete cascade |
 
 ## Posts
