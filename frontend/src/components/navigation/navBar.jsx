@@ -5,8 +5,11 @@ export const NavBar = () => {
   return(
     <>
       <nav>
-          <Link to="/">Home</Link>
+          <Link to='/'>Home</Link>
       </nav>
+      <select className='site_nav'>
+        <option>Test</option>
+      </select>
     </>
   )
 }
