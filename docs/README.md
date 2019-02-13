@@ -26,18 +26,22 @@ Friggit is a clone of the Reddit website using JavaScript, PostgreSql, React (an
 # Implementation Timeline
 ---
 
-## Phase 1: Main Homepage (2 Days)
+## Phase 1: REDUX (1 Days)
+* **Objective:**
+    * [Good 'ol college try to] Set up project for Redux.
+
+## Phase 2: Main Homepage (2 Days)
 * **Objective:**
     * Set home main homepage design
 
-## Phase 2: Log in/Sign up Pages and Backend (4 Days)
+## Phase 3: Log in/Sign up Pages and Backend (4 Days)
 * **Objective:**
     * Set up Log in/Sign up pages
     * Setting up sign up validation
     * Setting up log in authentication
     * Set up user backend
 
-## Phase 3: Sub-Friggit Pages Connected with Backend (4 Days)
+## Phase 4: Sub-Friggit Pages Connected with Backend (4 Days)
  * **Objective:**
     * Sub-Friggit backend
     * User ability to create Sub-Friggits
@@ -45,18 +49,18 @@ Friggit is a clone of the Reddit website using JavaScript, PostgreSql, React (an
     * Ability to delete Sub-Friggit page
     * Edit post functionality
 
-## Phase 4: Connect Sub-Friggit Pages/Posts on Other Pages (3 Days)
+## Phase 5: Connect Sub-Friggit Pages/Posts on Other Pages (3 Days)
 * **Objective:**
     * Display Sub-Friggit pages on homepage
     * Create tabs for all/oc/nsfw pages and display Sub-Friggit pages accordingly
 
-## Phase 5: Comment Functionality on Posts (2 Days)
+## Phase 6: Comment Functionality on Posts (2 Days)
 * **Objective:**
     * Add ability to comment on posts
     * Comment delete functionality
     * Comment edit functionality
 
-## Phase 6: Subscription Functionality (3 Days)
+## Phase 7: Subscription Functionality (3 Days)
 * **Objective:**
     * Add ability for users to subscribe/unsubscribe from Sub-Friggit pages
     * Add functionality to display posts for subscribed Sub-Friggit on user homepage
