@@ -26,9 +26,9 @@ Friggit is a clone of the Reddit website using JavaScript, PostgreSql, React (an
 # Implementation Timeline
 ---
 
-## Phase 1: REDUX (1 Days)
+## Phase 1: REDUX (1 Day)
 * **Objective:**
-    * [Good 'ol college try to] Set up project for Redux.
+    * [Good ol' college try to] Set up project for Redux.
 
 ## Phase 2: Main Homepage (2 Days)
 * **Objective:**
