@@ -2,20 +2,20 @@ import { userInput, toggleLogIn, toggleSignUp } from './actions/navActions/logIn
 
 const mapStateToProps = (state) => {
   return ({
-    logSign: state.logInReducer.loginOrSignup
+    logIn: state.logInReducer.isLoggedIn
   })
 }
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    userInput: logSign => {
-      dispatch(userInput(logSign))
+    userInput: logIn => {
+      dispatch(userInput(logIn))
     },
-    toggleLogIn: logSign => {
-      dispatch(toggleLogIn(logSign))
+    toggleLogIn: logIn => {
+      dispatch(toggleLogIn(logIn))
     },
-    toggleSignUp: logSign => {
-      dispatch(toggleSignUp(logSign))
+    toggleSignUp: logIn => {
+      dispatch(toggleSignUp(logIn))
     }
   })
 }
