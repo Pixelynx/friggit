@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const NavBar = ({ toggleLogIn, toggleSignUp }) => {
+const NavBar = ({ logged, handleClick, userLogged }) => {
   return(
     <>
       <nav>
@@ -12,10 +12,12 @@ export const NavBar = ({ toggleLogIn, toggleSignUp }) => {
         <option>All</option>
         <option>Original Content</option>
       </select>
-      <div className="sign_in_up">
-        <button name="log_in"  onClick={SignUp_LogInModal}>Log In</button>
-        <button name="sign_up" onClick={toggleSignUp}>Sign Up</button>
-      </div>
+      <form className="sign_in_up" onSubmit={userLogged}>
+        <button name="log_in" value={logged} onClick={handleClick}>Log In</button>
+        <button name="sign_up" value={logged} >Sign Up</button>
+      </form>
     </>
   )
 }
+
+export default NavBar

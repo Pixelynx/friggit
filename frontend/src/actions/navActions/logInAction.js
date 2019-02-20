@@ -1,10 +1,11 @@
-import { TOGGLE_LOG_IN, TOGGLE_SIGN_UP } from "./actionTypes";
+import { USER_INPUT, TOGGLE_LOG_IN, TOGGLE_SIGN_UP } from "./actionTypes";
 
-export const toggleLogIn = () => body => {
-  return { type: TOGGLE_LOG_IN, payload: body }
+export const userInput = () => logSign => {
+  return { type: USER_INPUT, payload: logSign }
 }
-export const toggleSignUp = () => body => {
-  return { type: TOGGLE_SIGN_UP, payload: body }
+export const toggleLogIn = () => logSign => {
+  return { type: TOGGLE_LOG_IN, payload: logSign }
 }
-
-export { TOGGLE_LOG_IN, TOGGLE_SIGN_UP };
+export const toggleSignUp = () => logSign => {
+  return { type: TOGGLE_SIGN_UP, payload: logSign }
+}
