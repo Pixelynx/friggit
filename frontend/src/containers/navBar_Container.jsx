@@ -2,21 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // import { mapStateToProps, mapDispatchToProps } from '../reduxUtils.js';
+import { loginModalIsShowing } from '../actions/navActions/logInAction.js';
 import NavBar from '../components/navigation/navBar.jsx';
 
 
 class NavBarContainer extends Component {
-
-  handleClick = () => {
-
-  }
 
   render() {
     return(
       <>
       <div>
         <NavBar
-            handleClick={this.handleClick}
+            loginClick={() => this.props.loginModalIsShowing()}
           />
 
       </div>
@@ -25,7 +22,4 @@ class NavBarContainer extends Component {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NavBarContainer)
+export default connect(null, { loginModalIsShowing })(NavBarContainer)

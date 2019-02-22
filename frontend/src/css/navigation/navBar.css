@@ -1,0 +1,70 @@
+body {
+  background-color: #191919;
+}
+
+.navBar_Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 2fr 1fr;
+  background-color: #323232;
+  height: 3em;
+  border-bottom: 1px solid #4c4c4c;
+}
+
+.home_icon {
+  color: #cccccc;
+  grid-column: 1;
+  align-self: center;
+}
+
+.site_nav {
+  background-color: #323232;
+  color: #cccccc;
+  border: none;
+  border-radius: 5%;
+  height: 75%;
+  grid-column: 2;
+  align-self: center;
+}
+.site_nav:hover {
+  border: solid 1px #4c4c4c;
+}
+
+.login_signup_container {
+  grid-column: 4;
+  align-self: center;
+}
+
+.log_in {
+  height: 2.5em;
+  width: 6em;
+  margin-right: 2%;
+  background-color: #323232;
+  border: solid 1px #cccccc;
+  border-radius: 5%;
+  color: #cccccc;
+}
+
+.sign_up {
+  height: 2.5em;
+  width: 6em;
+  margin-left: 2%;
+  background-color: #cccccc;
+  border: solid 1px #cccccc;
+  border-radius: 5%;
+  color: #323232;
+}
+
+.user_menu {
+  background-color: #323232;
+  border: none;
+  border-radius: 5%;
+  color: #cccccc;
+  height: 75%;
+  width: 50%;
+  grid-column: 6;
+  align-self: center;
+}
+
+.user_menu:hover {
+  border: solid 1px #4c4c4c;
+}

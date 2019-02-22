@@ -1,4 +1,4 @@
-import { loginModal } from './navReducers/loginModal.js';
+import { loginModalReducer } from './navReducers/loginModal.js';
 import { combineReducers } from 'redux';
 
-export default combineReducers({ loginModal });
+export default combineReducers({ loginModalReducer });
