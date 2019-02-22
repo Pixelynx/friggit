@@ -1,8 +1,8 @@
-import { USER_INPUT, TOGGLE_LOG_IN, TOGGLE_SIGN_UP } from "./actionTypes";
+import { SHOW_LOGIN_MODAL, HIDE_LOGIN_MODAL } from "./actionTypes";
 
-export const userInput = () => isLoggedIn => {
-  return {  }
+export const loginModalIsShowing = () => {
+  return { type: SHOW_LOGIN_MODAL, payload: true }
 }
-export const toggleLogIn = () => isLoggedIn => {
-  return {  }
+export const loginModalIsHidden = () => {
+  return { type: HIDE_LOGIN_MODAL, payload: false }
 }

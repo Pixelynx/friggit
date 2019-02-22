@@ -1,19 +1,21 @@
 import {
-
+  SHOW_LOGIN_MODAL,
+  HIDE_LOGIN_MODAL
 } from "../../actions/navActions/actionTypes";
 
 let defaultState = {
-  isLoggedIn: false
+  loginModalIsShowing: false
 }
 
-export const logInReducer = (state = defaultState, action) => {
-  Object.freeze(state);
-
-  let logIn = state.isLoggedIn;
-
-
+export const logModalReducer = (state = defaultState, action) => {
+  console.log('Login button clicked')
   switch(action.type) {
-
+    case SHOW_LOGIN_MODAL:
+      return { loginModalIsShowing: action.payload }
+    case HIDE_LOGIN_MODAL:
+      return { loginModalIsShowing: action.payload }
+    default:
+      return state;
     }
 
 

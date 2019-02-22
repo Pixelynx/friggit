@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { mapStateToProps, mapDispatchToProps } from '../reduxUtils.js';
+// import { mapStateToProps, mapDispatchToProps } from '../reduxUtils.js';
 import NavBar from '../components/navigation/navBar.jsx';
 
 
