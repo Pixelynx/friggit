@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { LoginModal } from './loginModal.jsx';
+import { LoginModal } from '../login/loginModal.jsx';
 
 import '../../css/navigation/navBar.css';
 
