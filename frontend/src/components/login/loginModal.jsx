@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../css/navigation/loginModal.css';
 
-export const LoginModal = ({ loginModalIsOpen }) => {
+export const LoginModal = ({ isOpen }) => {
   return(
     <>
-      {!loginModalIsOpen ?
+      {isOpen ?
         <div className='login_modal_container'>
           <form className='login_modal'>
 

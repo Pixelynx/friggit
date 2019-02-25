@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { loginModalIsShowing } from '../actions/navActions/logInAction.js';
 import NavBar from '../components/navigation/navBar.jsx';
 
 
@@ -11,9 +10,7 @@ class NavBarContainer extends Component {
     return(
       <>
       <div>
-        <NavBar
-            loginClick={() => this.props.loginModalIsShowing()}
-          />
+        <NavBar/>
 
       </div>
       </>

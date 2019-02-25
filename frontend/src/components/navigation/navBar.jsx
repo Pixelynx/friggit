@@ -22,9 +22,11 @@ class NavBar extends Component {
   };
 
   render() {
+    const { loginModalIsOpen, signupModalIsOpen } = this.state;
     console.log(this.state)
 
   return(
+
     <>
       <div className='navBar_Container'>
         <nav className='home_icon'>
@@ -41,7 +43,7 @@ class NavBar extends Component {
           <button
             className='log_in'
             name='log_in'
-            onClick={ this.openLoginModal }>Log In</button>
+            onClick={ loginModalIsOpen ? this.closeLoginModal : this.openLoginModal }>Log In</button>
           <button className='sign_up' name='sign_up' >Sign Up</button>
         </div>
 
@@ -50,7 +52,12 @@ class NavBar extends Component {
           <option>Log In/Sign Up</option>
         </select>
       </div>
-      <LoginModal />
+
+      <LoginModal
+        isOpen={loginModalIsOpen}
+        openLoginModal={this.openLoginModal}
+        closeLoginModal={this.closeLoginModal}
+        />
 
     </>
   )}
