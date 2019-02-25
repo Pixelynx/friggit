@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { LoginModal } from '../login/loginModal.jsx';
+import { SignupModal } from '../signup/signupModal.jsx';
 
 import '../../css/navigation/navBar.css';
 
@@ -11,14 +12,14 @@ class NavBar extends Component {
   };
 
 
-  openLoginModal = () => {
+  openModal = (event) => {
     console.log('Open')
-    this.setState({ loginModalIsOpen: true })
+    this.setState({ [event.target.name]: true })
   };
 
-  closeLoginModal = () => {
+  closeModal = (event) => {
     console.log('closing')
-    this.setState({ loginModalIsOpen: false })
+    this.setState({ [event.target.name]: false })
   };
 
   render() {
@@ -42,9 +43,12 @@ class NavBar extends Component {
         <div className='login_signup_container'>
           <button
             className='log_in'
-            name='log_in'
-            onClick={ loginModalIsOpen ? this.closeLoginModal : this.openLoginModal }>Log In</button>
-          <button className='sign_up' name='sign_up' >Sign Up</button>
+            name='loginModalIsOpen'
+            onClick={ loginModalIsOpen ? this.closeModal : this.openModal }>Log In</button>
+          <button
+            className='sign_up'
+            name='signupModalIsOpen'
+            onClick={ signupModalIsOpen ? this.closeModal : this.openModal} >Sign Up</button>
         </div>
 
         <select className='user_menu'>
@@ -55,8 +59,14 @@ class NavBar extends Component {
 
       <LoginModal
         isOpen={loginModalIsOpen}
-        openLoginModal={this.openLoginModal}
-        closeLoginModal={this.closeLoginModal}
+        openLoginModal={this.openModal}
+        closeLoginModal={this.closeModal}
+        />
+
+      <SignupModal
+        isOpen={signupModalIsOpen}
+        openSignupModal={this.openModal}
+        closeSignupModal={this.closeModal}
         />
 
     </>

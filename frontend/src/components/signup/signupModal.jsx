@@ -1,8 +1,8 @@
 import React from 'react';
 import '../../css/navigation/loginSignupModal.css';
 
-export const LoginModal = ({ isOpen }) => {
-  return(
+export const SignupModal = ({ isOpen }) => {
+  return (
     <>
       {isOpen ?
         <div className='login_signup_modal_container'>
@@ -11,27 +11,19 @@ export const LoginModal = ({ isOpen }) => {
             <input
               className='login_signup_input'
               type='text'
-              placeholder='Username'
-              />
-            <br />
-
-            <input
-              className='login_signup_input'
-              type='text'
-              placeholder='Password'
+              placeholder='Email'
               />
             <br />
 
             <input
               className='login_signup_submit'
               type='submit'
-              value='Log In'
+              value='Next'
               />
 
 
           </form>
-        </div>
-        : null }
+        </div> : null }
     </>
   )
-};
+}
