@@ -13,18 +13,15 @@ class NavBar extends Component {
 
 
   openModal = (event) => {
-    console.log('Open')
     this.setState({ [event.target.name]: true })
   };
 
   closeModal = (event) => {
-    console.log('closing')
     this.setState({ [event.target.name]: false })
   };
 
   render() {
     const { loginModalIsOpen, signupModalIsOpen } = this.state;
-    console.log(this.state)
 
   return(
 
@@ -44,11 +41,15 @@ class NavBar extends Component {
           <button
             className='log_in'
             name='loginModalIsOpen'
-            onClick={ loginModalIsOpen ? this.closeModal : this.openModal }>Log In</button>
+            onClick={ loginModalIsOpen ?
+              this.closeModal : this.openModal
+            }>Log In</button>
           <button
             className='sign_up'
             name='signupModalIsOpen'
-            onClick={ signupModalIsOpen ? this.closeModal : this.openModal} >Sign Up</button>
+            onClick={ signupModalIsOpen ?
+              this.closeModal : this.openModal
+            }>Sign Up</button>
         </div>
 
         <select className='user_menu'>
