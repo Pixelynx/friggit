@@ -8,19 +8,19 @@ CREATE TABLE users (
   username VARCHAR NOT NULL UNIQUE,
   password_digest VARCHAR NOT NULL,
   email VARCHAR NOT NULL UNIQUE,
-  display_name VARCHAR NOT NULL,
-  link_twitter BOOLEAN,
-  about TEXT
+  display_name VARCHAR NOT NULL
 );
 
 CREATE TABLE profile (
   id SERIAL PRIMARY KEY,
-  user_id INT REFERENCES users(id) ON DELETE CASCADE
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  link_twitter BOOLEAN,
+  about TEXT
 );
 
 CREATE TABLE sub_friggits (
   id SERIAL PRIMARY KEY,
-  admin_id INT REFERENCES users(id),
+  admin_id INT REFERENCES users(id)
 );
 
 CREATE TABLE subscriptions (
