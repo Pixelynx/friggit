@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import NavBar from '../navigation/navBar.jsx';
+import { CreatePostCommunityButton } from '../posts/createPostCommButton.jsx';
 
 import '../../css/home/homePage.css';
 
@@ -18,6 +19,7 @@ componentDidMount = () => {
       <>
         <NavBar />
         <div className='home_page'></div>
+        <CreatePostCommunityButton />
       </>
     )
   }

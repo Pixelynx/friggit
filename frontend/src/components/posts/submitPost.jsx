@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link, Route } from 'react-router-dom';
 
+import '../../css/posts/createPost.css';
+
 class SubmitPost extends Component {
 
-  submitPostsAPI = () => {
+  componentDidMount = () => {
     axios.get('/submit')
       .then(res => {
         console.log('got submit page')
