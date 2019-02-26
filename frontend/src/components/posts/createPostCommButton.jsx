@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const CreatePostButton = () => {
+export const CreatePostCommunityButton = () => {
   return (
     <>
       <Link to='/submit'>

@@ -1,7 +1,3 @@
-body {
-  background-color: #191919;
-}
-
 .navBar_Container {
   display: grid;
   grid-template-columns: 1fr 1fr 3fr 2fr 1fr;
