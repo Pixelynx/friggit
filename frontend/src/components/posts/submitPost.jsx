@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link, Route } from 'react-router-dom';
 
 import '../../css/posts/createPost.css';
 
@@ -16,8 +15,10 @@ class SubmitPost extends Component {
   render() {
     return(
       <>
-        <div>Posts Page</div>
+          <div>Posts Page</div>
       </>
     )
   }
 }
+
+export default SubmitPost;

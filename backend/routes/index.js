@@ -1,10 +1,7 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+const router = express.Router();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-  res.send('Home')
+router.get('/', (req, res) => {
+  res.render('index', {title: 'Express'})
 })
+ module.exports = router;
