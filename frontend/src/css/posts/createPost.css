@@ -1,4 +1,4 @@
-body {
+.submit_post_containers_container {
  background-color: #000;
  display: grid;
  grid-template-columns: 2fr 1fr;
