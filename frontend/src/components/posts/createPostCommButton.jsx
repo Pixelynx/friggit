@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import '../../css/posts/postCommunityButtonContainer.css';
+
 
 export const CreatePostCommunityButton = () => {
   return (

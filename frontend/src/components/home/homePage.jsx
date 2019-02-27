@@ -4,6 +4,7 @@ import NavBar from '../navigation/navBar.jsx';
 import { CreatePostCommunityButton } from '../posts/createPostCommButton.jsx';
 
 import '../../css/home/homePage.css';
+import '../../css/posts/postCommunityButtonContainer.css';
 
 class HomePage extends Component {
 

@@ -10,8 +10,7 @@ class App extends Component {
   render() {
     return(
       <>
-        <HomePage />
-
+        <Route exact path='/' component={HomePage} />
         <Route exact path='/submit' component={SubmitPost} />
       </>
     )

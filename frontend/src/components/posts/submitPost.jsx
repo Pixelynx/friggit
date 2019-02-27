@@ -9,7 +9,7 @@ class SubmitPost extends Component {
     axios.get('/submit')
       .then(res => {
         console.log('got submit page')
-      }).catch(err => console.log('WHATS THE ERROR',err))
+      }).catch(err => console.log(err))
   }
 
   render() {
