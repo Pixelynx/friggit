@@ -10,7 +10,7 @@
   border: 1px solid #323232;
   height: 3.5em;
   width: 25em;
-  color: #FFF;
+  color: #d3d3d3;
   font-weight: bold;
   margin-bottom: 1em;
 }
@@ -33,7 +33,7 @@
 }
 
 .create_post_text {
-  color: #FFF;
+  color: #d3d3d3;
   font-size: 20px;
 }
 
@@ -57,6 +57,7 @@
   border-radius: 5px;
   padding-left: 1.5em;
   font-size: 12px;
+  color: #a8a8a8;
 }
 
 .post_text_box {
@@ -68,6 +69,7 @@
   font-size: 12px;
   margin: 0 0 1em 1.2em;
   padding-left: 1.5em;
+  color: #a8a8a8;
 }
 
 .selections_post_container {
@@ -79,6 +81,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
   width: 16em;
+  color: #a8a8a8;
 }
 
 #oc, #spoiler, #nsfw {
@@ -101,6 +104,16 @@
 
 #nsfw {
   width: 5em;
+}
+
+.draft_post {
+  color: #a8a8a8;
+  font-weight: bold;
+}
+
+#draft {
+  background-color: #191919;
+  border-radius: 5px;
 }
 
 .post_notif {
