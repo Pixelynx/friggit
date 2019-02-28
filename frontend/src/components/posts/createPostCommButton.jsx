@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 export const CreatePostCommunityButton = () => {
   return (
     <>
@@ -13,4 +11,4 @@ export const CreatePostCommunityButton = () => {
       </div>
     </>
   )
-}
+};
