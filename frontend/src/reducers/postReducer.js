@@ -1,12 +1,6 @@
 import { ADD_POST, EDIT_POST, DELETE_POST } from '../actions/types.js';
 
-const initialState = {
-  posts: [
-    { id: null, body: null}
-  ]
-};
-
-const postReducer = (state = initialState, action) => {
+const postReducer = (state = [], action) => {
     let newState = state;
     let postIndex;
 
@@ -15,6 +9,7 @@ const postReducer = (state = initialState, action) => {
       let idGen = newState.posts[newState.posts.length - 1].id + 1;
       newState.posts.push({
         id: idGen,
+        title: action.payload,
         body: action.payload
       });
       break;
