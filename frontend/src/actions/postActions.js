@@ -1,10 +1,24 @@
-import { ADD_POST, EDIT_POST, DELETE_POST } from './types';
+import { ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from './types';
 
-const addPost = (body) => {
+const addPost = (post) => {
   return {
     type: ADD_POST,
-    payload: body
+    postInput: post
   }
 };
 
-export { addPost };
+const editPost = (post) => {
+  return {
+    type: EDIT_POST,
+    editInput: post
+  }
+};
+
+const deletePost = (id) => {
+  return {
+    type: DELETE_POST,
+    deletePost: id
+  }
+};
+
+export { addPost, editPost, deletePost };
