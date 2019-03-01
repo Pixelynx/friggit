@@ -1,6 +1,15 @@
-import { ADD_POST, EDIT_POST, DELETE_POST } from '../actions/types.js';
+import { POSTS_ARE_LOADING, ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from '../actions/types.js';
 
-const postReducer = (state = [], action) => {
+export const postsAreLoading = (state = false, action) => {
+  switch (action.type) {
+    case POSTS_ARE_LOADING:
+    return action.loadingPosts;
+    break;
+    default: return state;
+  }
+}
+
+export const addPost = (state = [], action) => {
     let newState = state;
     let postIndex;
 
@@ -13,10 +22,7 @@ const postReducer = (state = [], action) => {
         body: action.payload
       });
       break;
-      default:
-      break;
+      default: return state;
     }
     return newState;
 }
-
-export default postReducer;
