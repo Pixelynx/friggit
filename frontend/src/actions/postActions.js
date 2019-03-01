@@ -21,4 +21,11 @@ const deletePost = (id) => {
   }
 };
 
-export { addPost, editPost, deletePost };
+const displayPosts = (posts) => {
+  return {
+    type: DISPLAY_POSTS,
+    posts
+  }
+};
+
+export { addPost, editPost, deletePost; displayPosts };
