@@ -1,4 +1,11 @@
-import { ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from './types';
+import { POSTS_ARE_LOADING, ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from './types';
+
+const postsAreLoading = (false) => {
+  return {
+    type: POSTS_ARE_LOADING,
+    loadingPosts: false
+  }
+}
 
 const addPost = (post) => {
   return {
@@ -28,4 +35,4 @@ const displayPosts = (posts) => {
   }
 };
 
-export { addPost, editPost, deletePost; displayPosts };
+export { postsAreLoading, addPost, editPost, deletePost; displayPosts };
