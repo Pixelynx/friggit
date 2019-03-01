@@ -6,10 +6,12 @@ export const postsAreLoading = (state = false, action) => {
     return action.loadingPosts;
     break;
     default: return state;
+    break;
   }
 };
 
 export const addPost = (state = [], action) => {
+    let posts = this.displayPosts.posts;
     let newState = state;
 
     switch (action.type) {
@@ -22,6 +24,7 @@ export const addPost = (state = [], action) => {
       });
       break;
       default: return state;
+      break;
     }
     return newState;
 };
@@ -33,19 +36,22 @@ export const editPost = (state = posts, action) => {
 
   switch (action.type) {
     case EDIT_POST:
-    postIndex = newState.displayPosts.posts.findIndex(post => {
+    postIndex = newState.posts.findIndex(post => {
     return post.id === action.editPost;
   });
     newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
     break;
     default: return state;
+    break;
   }
+  return newState;
 };
 
 export const deletePost = (state = posts, action) => {
   let posts = this.displayPosts.posts;
   let newState = state;
   let postIndex;
+
   switch (action.type) {
     case DELETE_POST:
     postIndex = newState.posts.findIndex(post => {
@@ -54,7 +60,9 @@ export const deletePost = (state = posts, action) => {
     newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
     break;
     default: return state;
+    break;
   }
+  return newState;
 };
 
 export const displayPosts = (state = false, action) => {
@@ -63,5 +71,6 @@ export const displayPosts = (state = false, action) => {
     return action.displayPosts;
     break;
     default: return state;
+    break;
   }
 };
