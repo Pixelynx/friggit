@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { RetrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
 
 import '../../css/posts/createPost.css';
 
 class SubmitPost extends Component {
 
   componentDidMount = () => {
-    axios.get('/submit')
-      .then(res => {
-        console.log('got submit page')
-        return res;
-      }).catch(err => console.log(err))
+    this.props.RetrieveAllPosts('/submit')
   }
 
   render() {
+
+
     return(
       <>
+      {this.props.loadingPosts ?
+        <p>Loading...</p> : <p>Sorry. You suck.</p>
+      }
+      
         <div className='submit_post_containers_container'>
             <div className='submit_post_container'>
               <span className='create_post_text'>Create a post</span>
@@ -62,4 +66,20 @@ class SubmitPost extends Component {
   }
 }
 
-export default SubmitPost;
+export const mapStateToProps = (state) => {
+  return ({
+    loadingPosts: state.postsAreLoading,
+    postInput: state.addPost,
+    editPost: state.editPost,
+    deletePost: state.deletePost,
+    posts: state.posts
+  })
+}
+
+export const mapDispatchToProps = (dispatch) => {
+  return {
+      fetchPosts: (url) => dispatch(RetrieveAllPosts(url))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitPost);

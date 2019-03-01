@@ -1,6 +1,6 @@
 import { POSTS_ARE_LOADING, ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from './types';
 
-const postsAreLoading = (false) => {
+const postsAreLoading = (bool) => {
   return {
     type: POSTS_ARE_LOADING,
     loadingPosts: false
@@ -35,4 +35,4 @@ const displayPosts = (posts) => {
   }
 };
 
-export { postsAreLoading, addPost, editPost, deletePost; displayPosts };
+export { postsAreLoading, addPost, editPost, deletePost, displayPosts };

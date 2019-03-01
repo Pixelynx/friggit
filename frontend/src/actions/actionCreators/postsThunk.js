@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { postsAreLoading, displayPosts } from '../postActions.js';
 
 export const RetrieveAllPosts = (url) => {
   return (dispatch) => {
