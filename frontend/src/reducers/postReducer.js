@@ -29,7 +29,11 @@ export const addPost = (state = [], action) => {
     return newState;
 };
 
-export const editPost = (state = posts, action) => {
+//
+
+export const editPost = (state = {
+  message: ''
+}, action) => {
   let posts = this.displayPosts.posts;
   let newState = state;
   let postIndex;
