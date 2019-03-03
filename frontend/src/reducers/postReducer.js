@@ -11,6 +11,7 @@ export const postsAreLoading = (state = false, action) => {
 };
 
 export const addPost = (state = [], action) => {
+  // This posts var may need to be removed/altered
     let posts = this.displayPosts.posts;
     let newState = state;
 
@@ -31,13 +32,13 @@ export const addPost = (state = [], action) => {
 
 
 export const editPost = (state = { message: '' }, action) => {
-  let posts = this.displayPosts.posts;
   let newState = state;
   let postIndex;
 
   switch (action.type) {
     case EDIT_POST:
-    postIndex = newState.posts.findIndex(post => {
+    // Needs to be fxed
+    postIndex = newState.CHANGE_THIS.findIndex(post => {
     return post.id === action.editPost;
   });
     break;
@@ -47,17 +48,17 @@ export const editPost = (state = { message: '' }, action) => {
   return newState;
 };
 
-export const deletePost = (state = posts, action) => {
-  let posts = this.displayPosts.posts;
+export const deletePost = (state = TBD, action) => {
   let newState = state;
   let postIndex;
 
   switch (action.type) {
     case DELETE_POST:
-    postIndex = newState.posts.findIndex(post => {
+    postIndex = newState.CHANGE_THIS.findIndex(post => {
       return post.id === action.deletePost;
     });
-    newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
+    // Needs to be fixed
+    newState.posts = newState.CHANGE_THIS.slice(0, postIndex).concat(newState.CHANGE_THIS.slice(postIndex + 1))
     break;
     default: return state;
     break;
