@@ -29,11 +29,8 @@ export const addPost = (state = [], action) => {
     return newState;
 };
 
-//
 
-export const editPost = (state = {
-  message: ''
-}, action) => {
+export const editPost = (state = { message: '' }, action) => {
   let posts = this.displayPosts.posts;
   let newState = state;
   let postIndex;
@@ -43,7 +40,6 @@ export const editPost = (state = {
     postIndex = newState.posts.findIndex(post => {
     return post.id === action.editPost;
   });
-    newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
     break;
     default: return state;
     break;
