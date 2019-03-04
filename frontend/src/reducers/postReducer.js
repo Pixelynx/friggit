@@ -11,8 +11,8 @@ export const postsAreLoading = (state = false, action) => {
 };
 
 export const addPost = (state = [], action) => {
-  // This posts var may need to be removed/altered
-    let posts = this.displayPosts.posts;
+  // [I think?] grabs the state for target?
+    let posts = [...state.posts];
     let newState = state;
 
     switch (action.type) {
@@ -33,6 +33,7 @@ export const addPost = (state = [], action) => {
 
 export const editPost = (state = { message: '' }, action) => {
   let newState = state;
+  let posts = [...state.posts];
   let postIndex;
 
   switch (action.type) {
@@ -52,13 +53,13 @@ export const deletePost = (state = TBD, action) => {
   let newState = state;
   let postIndex;
 
+// loops though posts in state. slices array at point of deletion and concats at point after.
   switch (action.type) {
     case DELETE_POST:
-    postIndex = newState.CHANGE_THIS.findIndex(post => {
+    postIndex = newState.posts.findIndex(post => {
       return post.id === action.deletePost;
     });
-    // Needs to be fixed
-    newState.posts = newState.CHANGE_THIS.slice(0, postIndex).concat(newState.CHANGE_THIS.slice(postIndex + 1))
+    newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
     break;
     default: return state;
     break;
