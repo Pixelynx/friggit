@@ -10,10 +10,10 @@ export const postsAreLoading = (state = false, action) => {
   }
 };
 
-export const addPost = (state = [], action) => {
-  // [I think?] grabs the state for target?
-    let posts = [...state.posts];
+export const addPost = (state = { posts: [] }, action) => {
+  // created a posts object and set the state to an empty array to push into
     let newState = state;
+    // let posts = [...newState.posts];
 
     switch (action.type) {
       case ADD_POST:
@@ -32,39 +32,34 @@ export const addPost = (state = [], action) => {
 
 
 export const editPost = (state = { message: '' }, action) => {
-  let newState = state;
-  let posts = [...state.posts];
-  let postIndex;
+  // let newState = state;
+  // let posts = [...newState.posts];
+  // let postIndex;
 
   switch (action.type) {
     case EDIT_POST:
     // Needs to be fxed
-    postIndex = newState.CHANGE_THIS.findIndex(post => {
-    return post.id === action.editPost;
-  });
+    return state.message = 'Posts was edited.';
     break;
     default: return state;
     break;
   }
-  return newState;
+  return state.message;
 };
 
-export const deletePost = (state = TBD, action) => {
+export const deletePost = (state = { message: '' }, action) => {
   let newState = state;
-  let postIndex;
+  // let posts = [...newState.posts];
+  // let postIndex;
 
-// loops though posts in state. slices array at point of deletion and concats at point after.
   switch (action.type) {
     case DELETE_POST:
-    postIndex = newState.posts.findIndex(post => {
-      return post.id === action.deletePost;
-    });
-    newState.posts = newState.posts.slice(0, postIndex).concat(newState.posts.slice(postIndex + 1))
+    return state.message = 'Post was deleted.';
     break;
     default: return state;
     break;
   }
-  return newState;
+  return state.message;
 };
 
 export const displayPosts = (state = false, action) => {

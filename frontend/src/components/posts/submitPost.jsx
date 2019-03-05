@@ -8,6 +8,7 @@ import '../../css/posts/createPost.css';
 class SubmitPost extends Component {
 
   componentDidMount = () => {
+    debugger
     this.props.RetrieveAllPosts('/submit')
   }
 
@@ -19,7 +20,7 @@ class SubmitPost extends Component {
       {this.props.loadingPosts ?
         <p>Loading...</p> : <p>Sorry. You suck.</p>
       }
-      
+
         <div className='submit_post_containers_container'>
             <div className='submit_post_container'>
               <span className='create_post_text'>Create a post</span>
