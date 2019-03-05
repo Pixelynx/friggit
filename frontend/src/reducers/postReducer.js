@@ -11,9 +11,7 @@ export const postsAreLoading = (state = false, action) => {
 };
 
 export const addPost = (state = { posts: [] }, action) => {
-  // created a posts object and set the state to an empty array to push into
     let newState = state;
-    // let posts = [...newState.posts];
 
     switch (action.type) {
       case ADD_POST:
@@ -32,13 +30,9 @@ export const addPost = (state = { posts: [] }, action) => {
 
 
 export const editPost = (state = { message: '' }, action) => {
-  // let newState = state;
-  // let posts = [...newState.posts];
-  // let postIndex;
 
   switch (action.type) {
     case EDIT_POST:
-    // Needs to be fxed
     return state.message = 'Posts was edited.';
     break;
     default: return state;
@@ -49,8 +43,6 @@ export const editPost = (state = { message: '' }, action) => {
 
 export const deletePost = (state = { message: '' }, action) => {
   let newState = state;
-  // let posts = [...newState.posts];
-  // let postIndex;
 
   switch (action.type) {
     case DELETE_POST:
@@ -62,10 +54,10 @@ export const deletePost = (state = { message: '' }, action) => {
   return state.message;
 };
 
-export const displayPosts = (state = false, action) => {
+export const displayPosts = (state = null, action) => {
   switch (action.type) {
     case DISPLAY_POSTS:
-    return action.displayPosts;
+    return action.posts;
     break;
     default: return state;
     break;
