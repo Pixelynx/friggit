@@ -15,12 +15,9 @@ class SubmitPost extends Component {
 
   render() {
 
-
     return(
       <>
-      {this.props.loadingPosts ?
-        <p>Loading...</p> : <p>Sorry. You suck.</p>
-      }
+
 
         <div className='submit_post_containers_container'>
             <div className='submit_post_container'>
@@ -63,6 +60,10 @@ class SubmitPost extends Component {
             </div>
         </div>
             <div className='rules_policy_container'></div>
+
+              {this.props.loadingPosts ?
+                <p className="test">Loading...</p> : <p className="test">Sorry. You suck.</p>
+              }
       </>
     )
   }
