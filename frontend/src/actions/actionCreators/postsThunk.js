@@ -5,7 +5,9 @@ import { postsAreLoading, displayPosts } from '../postActions.js';
 export const retrieveAllPosts = () => (dispatch) => {
 
   return util.getAllPosts()
-              .then(res => dispatch(displayPosts(res.data.posts)))
+              .then(res => {
+                dispatch(displayPosts(res.data.posts))
+              })
               .catch(err => console.log(err))
 
   }

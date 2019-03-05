@@ -13,12 +13,19 @@ class Posts extends Component {
   }
 
   render() {
-    const { loadingPosts } = this.props;
+    let mapPosts;
+    const { posts } = this.props;
+
+
+
     return(
       <>
-        {loadingPosts ?
-          <p className="test">Loading...</p> : <p className="test">Sorry. You suck.</p>
-        }
+      {posts ?
+        mapPosts = posts.map(post => {
+          return <p className="test">{post}</p>
+
+        }) : <p className="test">Sorry. Ya still suck.</p>
+      }
         </>
     )
   }
@@ -28,12 +35,13 @@ class Posts extends Component {
 
 
 export const mapStateToProps = (state) => {
+  // console.log()
   return ({
     loadingPosts: state.postsAreLoading,
-    postInput: state.addPost,
+    postInput: state.postInput,
     editPost: state.editPost,
     deletePost: state.deletePost,
-    posts: state.posts
+    posts: state.displayPosts
   })
 }
 
