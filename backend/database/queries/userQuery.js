@@ -1,15 +1,15 @@
 const { db } = require('../index/index.js');
 
 module.exports = {
-  
+
   getAllUsers: (req, res, next) => {
     db.any('SELECT * FROM users')
       .then(body => {
         res.status(200)
         .json({
           status: 'Success',
-        message: 'Got all users',
-        body: body
+          message: 'Got all users',
+          body: body
       })
     }).catch(err => console.log(err))
   },

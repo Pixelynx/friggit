@@ -9,7 +9,7 @@ module.exports = {
         .json({
           status: 'Success',
           message: 'Retrieved all posts',
-          output: output
+          posts: output
         })
       }).catch(err => console.log(err))
   },
