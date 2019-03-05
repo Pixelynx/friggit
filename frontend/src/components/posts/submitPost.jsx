@@ -9,7 +9,7 @@ class SubmitPost extends Component {
 
   componentDidMount = () => {
     debugger
-    this.props.RetrieveAllPosts('/submit')
+    this.props.RetrieveAllPosts('/api/submit')
   }
 
   render() {
