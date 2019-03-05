@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { RetrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
+import { retrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
 
 import '../../css/posts/createPost.css';
 
 class SubmitPost extends Component {
 
   componentDidMount = () => {
+    let { fetchPosts } = this.props;
     debugger
-    this.props.RetrieveAllPosts('/api/submit')
+    fetchPosts();
   }
 
   render() {
@@ -79,7 +80,7 @@ export const mapStateToProps = (state) => {
 
 export const mapDispatchToProps = (dispatch) => {
   return {
-      fetchPosts: () => dispatch(RetrieveAllPosts())
+      fetchPosts: () => dispatch(retrieveAllPosts())
     };
 };
 
