@@ -3,6 +3,8 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { retrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
 
+import '../../css/posts/createPost.css';
+
 class Posts extends Component {
 
   componentDidMount = () => {
@@ -11,8 +13,13 @@ class Posts extends Component {
   }
 
   render() {
+    const { loadingPosts } = this.props;
     return(
-      <div></div>
+      <>
+        {loadingPosts ?
+          <p className="test">Loading...</p> : <p className="test">Sorry. You suck.</p>
+        }
+        </>
     )
   }
 }
