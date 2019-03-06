@@ -15,16 +15,6 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  handlePostSubmit = (e) => {
-    e.preventDefault();
-    const { title, body } = this.props;
-
-    return ({
-      title: this.state.title_input,
-      body: this.state.post_text_box
-    })
-  }
-
 
   render() {
      console.log(this.state)

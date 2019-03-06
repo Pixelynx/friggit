@@ -1,38 +1,59 @@
-import { POSTS_ARE_LOADING, ADD_POST, EDIT_POST, DELETE_POST, DISPLAY_POSTS } from './types';
+import { ADD_POST, DELETE_POST, DISPLAY_POSTS } from './types';
+import axios from 'axios';
 
-const postsAreLoading = (bool) => {
-  return {
-    type: POSTS_ARE_LOADING,
-    loadingPosts: false
-  }
-}
-
-const addPost = (post) => {
-  return {
-    type: ADD_POST,
-    postInput: post
-  }
+export const addPost = ({ title, body }) => {
+  return (dispatch) {
+    return axios.post('/submit', {title, body})
+      .then(res => {
+        dispatch(addPostSuccessful(res.data))
+      })
+      .catch(err => throw(err));
+  };
 };
 
-const editPost = (post) => {
-  return {
-    type: EDIT_POST,
-    editInput: post
-  }
+export const addPostSuccessful = (data) => {
+  type: ADD_POST,
+  payload: {
+    id: data.id,
+    title: data.title,
+    body: data.body
+  };
 };
 
-const deletePost = (id) => {
+export const deletePost = (id) => {
+  return (dispatch) {
+    return axios.get(`/submit/${id}`)
+      .then(res => {
+        dispatch(deletePostSuccessful(res.data))
+      })
+      .catch(err => throw(err));
+  };
+};
+
+export const deletePostSuccessful = (id) => {
   return {
     type: DELETE_POST,
-    deletePost: id
-  }
+    payload: {
+      id
+    }
+  };
 };
 
-const displayPosts = (posts) => {
+export const displayPosts = () => {
+  return (dispatch) {
+    return axios.get(`/posts`)
+      .then(res => {
+        dispatch(displayPostsSuccessful(res.data))
+      })
+      .catch(err => throw(err));
+  };
+};
+
+export const displayPostsSuccessful = (posts) => {
   return {
     type: DISPLAY_POSTS,
-    posts
-  }
+    payload: {
+      posts
+    }
+  };
 };
-
-export { postsAreLoading, addPost, editPost, deletePost, displayPosts };
