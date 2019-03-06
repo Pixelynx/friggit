@@ -22,7 +22,7 @@ class Posts extends Component {
       <>
       {posts ?
         mapPosts = posts.map(post => {
-          return <p className="test">{post}</p>
+          return <p className="test">{post.body}</p>
 
         }) : <p className="test">Sorry. Ya still suck.</p>
       }
@@ -35,7 +35,6 @@ class Posts extends Component {
 
 
 export const mapStateToProps = (state) => {
-  // console.log()
   return ({
     loadingPosts: state.postsAreLoading,
     postInput: state.postInput,
