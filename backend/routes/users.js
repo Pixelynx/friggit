@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const queries = require('../database/queries/userQuery.js');
 
-/* GET users listing. */
-router.get('/',(req, res, next) => {
-  res.send('respond with a resource');
-});
+router.get('/', queries.getAllUsers);
+router.post('/', queries.createNewUser);
 
 module.exports = router;
