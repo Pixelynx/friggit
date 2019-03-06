@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addNewPost } from '../../actions/actionCreators/postsThunk.js';
+// import { addNewPost } from '../../actions/actionCreators/postsThunk.js';
 
 import '../../css/posts/createPost.css';
 

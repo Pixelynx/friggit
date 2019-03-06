@@ -6,8 +6,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { configureStore } from './store/configureStore.js';
+import { displayPosts } from './actions/postActions.js';
 
 const store = configureStore();
+
+store.dispatch(displayPosts());
 
 ReactDOM.render(
 

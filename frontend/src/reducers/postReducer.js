@@ -1,6 +1,6 @@
 import { ADD_POST, DELETE_POST, DISPLAY_POSTS } from '../actions/types.js';
 
-export default postReducer = (state = [], action) => {
+export const postReducer = (state = [], action) => {
   switch(action.type) {
     case ADD_POST:
       return [...state, action.payload];

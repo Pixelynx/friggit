@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { retrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
+// import { retrieveAllPosts } from '../../actions/actionCreators/postsThunk.js';
 import PostsForm from './postForm.jsx';
 
 import '../../css/posts/createPost.css';
