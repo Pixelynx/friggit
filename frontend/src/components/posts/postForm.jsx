@@ -6,8 +6,8 @@ import '../../css/posts/createPost.css';
 
 class PostForm extends Component {
   state = {
-    title_input: this.props.title,
-    post_text_box: this.props.body
+    title_input: '',
+    post_text_box: ''
   }
 
 
@@ -16,6 +16,7 @@ class PostForm extends Component {
   }
 
   handlePostSubmit = (e) => {
+    e.preventDefault();
     const { title, body } = this.props;
 
     return ({
@@ -23,6 +24,7 @@ class PostForm extends Component {
       body: this.state.post_text_box
     })
   }
+
 
   render() {
      console.log(this.state)
