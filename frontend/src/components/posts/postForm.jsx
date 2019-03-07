@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CreatePost } from './createPost.jsx';
 
 import '../../css/posts/createPost.css';
 
@@ -29,6 +30,7 @@ class PostForm extends Component {
 
 
   render() {
+    <CreatePost />
 
     return(
       <>
