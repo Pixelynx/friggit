@@ -38,20 +38,4 @@ class Posts extends Component {
 
 
 
-export const mapStateToProps = (state) => {
-  return ({
-    loadingPosts: state.postsAreLoading,
-    postInput: state.postInput,
-    editPost: state.editPost,
-    deletePost: state.deletePost,
-    posts: state.displayPosts
-  })
-}
-
-export const mapDispatchToProps = (dispatch) => {
-  return {
-      retrievePosts: () => dispatch(retrieveAllPosts())
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Posts);
+export default Posts;

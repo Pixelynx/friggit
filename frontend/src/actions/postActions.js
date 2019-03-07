@@ -2,7 +2,7 @@ import { ADD_POST, DELETE_POST, DISPLAY_POSTS } from './types';
 import axios from 'axios';
 
 export const addPost = ({ title, body }) => {
-  return (dispatch) {
+  return (dispatch) => {
     return axios.post('/submit', {title, body})
       .then(res => {
         dispatch(addPostSuccessful(res.data))
@@ -12,16 +12,18 @@ export const addPost = ({ title, body }) => {
 };
 
 export const addPostSuccessful = (data) => {
-  type: ADD_POST,
-  payload: {
-    id: data.id,
-    title: data.title,
-    body: data.body
-  };
+  return {
+    type: ADD_POST,
+    payload: {
+      id: data,
+      title: data,
+      body: data
+    }
+  }
 };
 
 export const deletePost = (id) => {
-  return (dispatch) {
+  return (dispatch) => {
     return axios.get(`/submit/${id}`)
       .then(res => {
         dispatch(deletePostSuccessful(res.data))
@@ -40,7 +42,7 @@ export const deletePostSuccessful = (id) => {
 };
 
 export const displayPosts = () => {
-  return (dispatch) {
+  return (dispatch) => {
     return axios.get(`/posts`)
       .then(res => {
         dispatch(displayPostsSuccessful(res.data))
