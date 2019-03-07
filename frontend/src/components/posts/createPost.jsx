@@ -1,9 +1,11 @@
 import React from 'react';
+import * as util from '../../utils/apiCalls.js';
 import '../../css/posts/createPost.css';
 
 export const CreatePost = ({
+  isValid,
   handlePostInput,
-  community,
+  subfriggit,
   post,
   img_vid,
   link_,
@@ -11,8 +13,12 @@ export const CreatePost = ({
   spoiler,
   nsfw
 }) => {
+  const postIsValid = () => {
+    {!post.title_input || !subfriggit ? !isValid : isValid }
+  }
 
   return(
+
     <>
 
     </>

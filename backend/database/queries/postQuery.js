@@ -15,9 +15,14 @@ module.exports = {
   },
 
   createNewPost: (req, res, next) => {
-    db.none('INSERT INTO posts (title, body) VALUES ($1, $2)', [
+    db.none('INSERT INTO posts (title, post, thumbnail, _link, oc, nsfw, spoiler) VALUES ($1, $2, $3, $4, $5, $6, $7)', [
       req.body.title,
-      req.body.body
+      req.body.post,
+      req.body.thumbnail,
+      req.body._link,
+      req.body.oc,
+      req.body.nsfw,
+      req.body.spoiler
     ])
       .then(() => {
         res.status(200)

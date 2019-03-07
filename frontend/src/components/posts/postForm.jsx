@@ -5,7 +5,7 @@ import '../../css/posts/createPost.css';
 
 class PostForm extends Component {
   state = {
-    community: '',
+    subfriggit: '',
     post: {
       title_input: '',
       text_input: ''
@@ -20,7 +20,8 @@ class PostForm extends Component {
     },
     oc: false,
     spoiler: false,
-    nsfw: false
+    nsfw: false,
+    isValid: false
   };
 
 
