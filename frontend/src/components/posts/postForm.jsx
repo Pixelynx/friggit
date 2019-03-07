@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { CreatePost } from './createPost.jsx';
+import { ClearState } from './clearState.jsx';
+import * as util from '../../utils/apiCalls.js';
 
 import '../../css/posts/createPost.css';
 
@@ -24,46 +25,43 @@ class PostForm extends Component {
     isValid: false
   };
 
-  postIsValid = () => {
-    const { isValid, post, subfriggit } = this.state;
-    if(!(post.title_input || subfriggit)) {
-      this.setState({isValid:false})
-    } else {
-      this.setState({isValid:true})
-    }
-    return isValid;
-  }
-
-  clearState = () => {
-    this.setState({
-      subfriggit: '',
-      post: {
-        title_input: '',
-        text_input: ''
-      },
-      img_vid: {
-        title_input: '',
-        img_vid_src: ''
-      },
-      link_: {
-        title_input: '',
-        url: ''
-      },
-      oc: false,
-      spoiler: false,
-      nsfw: false,
-      isValid: false
-    })
-  }
-
-
   handlePostInput = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  createPost = () => {
+    const {
+      isValid,
+      handlePostInput,
+      subfriggit,
+      post,
+      img_vid,
+      link_,
+      oc,
+      spoiler,
+      nsfw
+    } = this.state;
+
+    {isValid ?
+      util.createNewPost({
+        title: post.title_input,
+        post: post.text_input,
+        thumbnail: img_vid.img_vid_src,
+        _link: link_.url,
+        oc: oc,
+        nsfw: nsfw,
+        spoiler: spoiler
+      })
+      .then(() => util.getAllPosts())
+    : null}
+
+}
+
+
+
 
   render() {
-    <CreatePost />
+    <ClearState />
 
     return(
       <>
