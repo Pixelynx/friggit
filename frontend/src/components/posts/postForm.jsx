@@ -30,6 +30,33 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+
+// HACKY AF BUT WORKS
+  ocClick = (e) => {
+    let currentState = this.state;
+    if(!this.state.oc){
+    this.setState({ oc: true })
+  } else {
+    this.setState({ oc: false })
+  }
+  }
+  nsfwClick = (e) => {
+    let currentState = this.state;
+    if(!this.state.nsfw){
+    this.setState({ nsfw: true })
+  } else {
+    this.setState({ nsfw: false })
+  }
+  }
+  spoilerClick = (e) => {
+    let currentState = this.state;
+    if(!this.state.spoiler){
+    this.setState({ spoiler: true })
+  } else {
+    this.setState({ spoiler: false })
+  }
+  }
+
   handlePostSubmit = (e) => {
     const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.state;
 
@@ -51,6 +78,8 @@ class PostForm extends Component {
   }
 
   render() {
+    console.log(this.state)
+
 
     return(
       <>
@@ -81,7 +110,7 @@ class PostForm extends Component {
                 name='title_input'
                 className='title_input'
                 placeholder='Title'
-
+                onChange={this.handlePostInput}
                 />
                 <br />
               <input
@@ -89,14 +118,20 @@ class PostForm extends Component {
                 name='post_text_box'
                 className='post_text_box'
                 placeholder='Text (optional)'
-
+                onChange={this.handlePostInput}
                 />
 
               <div className='selections_post_container'>
                 <div className='mark_as_selections'>
-                  <div id='oc'>+ OC</div>
-                  <div id='spoiler'>+ SPOILER</div>
-                  <div id='nsfw'>+ NSFW</div>
+                  <div
+                    id='oc'
+                    onClick={this.ocClick}>+ OC</div>
+                  <div
+                    id='spoiler'
+                    onClick={this.spoilerClick}>+ SPOILER</div>
+                  <div
+                    id='nsfw'
+                    onClick={this.nsfwClick}>+ NSFW</div>
                 </div>
                 <div className='draft_post'>
                   <input type='button' id='draft' value='SAVE DRAFT' />
