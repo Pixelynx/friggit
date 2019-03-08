@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import * as util from '../../utils/apiCalls.js';
 import { ClearState } from './postCall.jsx';
 import { PostIsValid } from './postIsValid.jsx';
 import { ErrorModal } from './errorModal.jsx';
+import { BackToPostsButton } from './backToPostsButton.jsx';
 import Posts from './posts.jsx';
 
 
@@ -11,35 +13,32 @@ import '../../css/posts/createPost.css';
 
 
 class PostForm extends Component {
-  // state = {
-  //   subfriggit: '',
-  //   post: {
-  //     title_input: '',
-  //     text_input: ''
-  //   },
-  //   img_vid: {
-  //     title_input: '',
-  //     img_vid_src: ''
-  //   },
-  //   link_: {
-  //     title_input: '',
-  //     url: ''
-  //   },
-  //   oc: false,
-  //   spoiler: false,
-  //   nsfw: false,
-  //   isValid: false,
-  //   submitEnabled: false
-  // };
   state = {
-    submit_post: false,
+    subfriggit: '',
+    post: {
+      title_input: '',
+      text_input: ''
+    },
+    img_vid: {
+      title_input: '',
+      img_vid_src: ''
+    },
+    link_: {
+      title_input: '',
+      url: ''
+    },
+    oc: false,
+    spoiler: false,
+    nsfw: false,
+    isValid: false,
+    submitEnabled: false,
     errorModalIsOpen: false
 
   }
 
   openModal = (event) => {
     let currentState = this.state;
-    this.setState({ [event.target.name]: !currentState })
+    this.setState({ [event.target.name]: true })
   };
 
   closeModal = (event) => {
@@ -50,6 +49,16 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  togglePostValid = () => {
+    const { subfriggit, post, isValid } = this.state;
+    let currentState = this.state;
+    if(!post.text_input || !subfriggit) {
+      this.setState({ isValid: false })
+    } else {
+      this.setState({ isValid: true })
+    }
+    return isValid
+  }
 
 // HACKY AF BUT WORKS
   ocClick = () => {
@@ -79,16 +88,8 @@ class PostForm extends Component {
       }
     }
 
-  handleSubmitState = () => {
-    let currentState = this.props;
-      if(this.props.submitEnabled) {
-        this.setState({ submitEnabled: false })
-      } else {
-        this.setState({ submitEnabled: true })
-      }
-    }
-
-  handlePostSubmit = () => {
+  handlePostSubmit = (e) => {
+    e.preventDefault();
     const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.props;
 
     if(post.title_input && subfriggit){
@@ -109,13 +110,13 @@ class PostForm extends Component {
   }
 
   render() {
+    const { subfriggit, post, isValid } = this.state;
     console.log(this.state)
     console.log(this.props)
 
-
     return(
       <>
-
+      this.togglePostValid()
         <div className='submit_post_containers_container'>
             <form className='submit_post_container'  onSubmit={this.handlePostSubmit}>
               <span className='create_post_text'>Create a post</span>
@@ -167,13 +168,7 @@ class PostForm extends Component {
                 </div>
                 <div className='draft_post'>
                   <input type='button' id='draft' value='SAVE DRAFT' />
-                  <input
-                    type='button'
-                    id='submit_post'
-                    value='POST'
-                    name='errorModalIsOpen'
-                    onClick={this.state.errorModalIsOpen ? this.closeModal : null}
-                    />
+                  <BackToPostsButton />
                 </div>
               </div>
             <div className='post_notif'></div>
