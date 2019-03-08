@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { ClearState } from './clearState.jsx';
+import axios from 'axios';
 import * as util from '../../utils/apiCalls.js';
+import { ClearState } from './postCall.jsx';
 
 import '../../css/posts/createPost.css';
 
@@ -29,20 +30,10 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  createPost = () => {
-    const {
-      isValid,
-      handlePostInput,
-      subfriggit,
-      post,
-      img_vid,
-      link_,
-      oc,
-      spoiler,
-      nsfw
-    } = this.state;
+  handlePostSubmit = (e) => {
+    const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.state;
 
-    {isValid ?
+    if(post.title_input || subfriggit){
       util.createNewPost({
         title: post.title_input,
         post: post.text_input,
@@ -52,16 +43,14 @@ class PostForm extends Component {
         nsfw: nsfw,
         spoiler: spoiler
       })
-      .then(() => util.getAllPosts())
-    : null}
-
-}
-
-
-
+      .then(() => {
+        util.getAllPosts()
+      })
+      .catch(err => console.log(err))
+    } else console.log("you're an idiot")
+  }
 
   render() {
-    <ClearState />
 
     return(
       <>

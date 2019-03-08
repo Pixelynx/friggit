@@ -1,7 +1,9 @@
 import React from 'react';
+import * as util from '../../utils/apiCalls.js';
 
-export const ClearState = () => {
-  let clearState = this.setState({
+export const ClearState = ({ clearState, isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ }) => {
+  return(
+    this.setState({
       subfriggit: '',
       post: {
         title_input: '',
@@ -20,6 +22,6 @@ export const ClearState = () => {
       nsfw: false,
       isValid: false
     })
-  return clearState;
+  )
 
 }
