@@ -5,6 +5,7 @@ import { ClearState } from './postCall.jsx';
 
 import '../../css/posts/createPost.css';
 
+
 class PostForm extends Component {
   state = {
     subfriggit: '',
@@ -23,7 +24,8 @@ class PostForm extends Component {
     oc: false,
     spoiler: false,
     nsfw: false,
-    isValid: false
+    isValid: false,
+    submitEnabled: false
   };
 
   handlePostInput = (e) => {
@@ -40,6 +42,7 @@ class PostForm extends Component {
     this.setState({ oc: false })
   }
   }
+
   nsfwClick = (e) => {
     let currentState = this.state;
     if(!this.state.nsfw){
@@ -48,6 +51,7 @@ class PostForm extends Component {
     this.setState({ nsfw: false })
   }
   }
+
   spoilerClick = (e) => {
     let currentState = this.state;
     if(!this.state.spoiler){
@@ -55,6 +59,14 @@ class PostForm extends Component {
   } else {
     this.setState({ spoiler: false })
   }
+  }
+  handleSubmitState = () => {
+    let currentState = this.state;
+    if(this.state.submitEnabled) {
+      this.setState({ submitEnabled: false })
+    } else {
+      this.setState({ submitEnabled: true })
+    }
   }
 
   handlePostSubmit = (e) => {
@@ -83,6 +95,7 @@ class PostForm extends Component {
 
     return(
       <>
+      {!this.state.isValid ? this.postSubmit.disabled : this.postSubmit.enabled}
 
         <div className='submit_post_containers_container'>
             <form className='submit_post_container'>
@@ -135,7 +148,12 @@ class PostForm extends Component {
                 </div>
                 <div className='draft_post'>
                   <input type='button' id='draft' value='SAVE DRAFT' />
-                  <input type='button' id='submit_post' value='POST' />
+                  <input
+                    type='button'
+                    id='submit_post'
+                    value='POST'
+
+                    />
                 </div>
               </div>
             <div className='post_notif'></div>
@@ -146,6 +164,7 @@ class PostForm extends Component {
 
       </>
     )
+  }) 
   }
 }
 
