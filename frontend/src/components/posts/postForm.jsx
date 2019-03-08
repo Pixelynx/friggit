@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import * as util from '../../utils/apiCalls.js';
 import { ClearState } from './postCall.jsx';
+import { PostIsValid } from '/postIsValid.jsx';
 
 import '../../css/posts/createPost.css';
 
@@ -34,40 +35,41 @@ class PostForm extends Component {
 
 
 // HACKY AF BUT WORKS
-  ocClick = (e) => {
+  ocClick = () => {
     let currentState = this.state;
-    if(!this.state.oc){
-    this.setState({ oc: true })
-  } else {
-    this.setState({ oc: false })
-  }
-  }
+      if(!this.state.oc){
+        this.setState({ oc: true })
+      } else {
+        this.setState({ oc: false })
+      }
+    }
 
-  nsfwClick = (e) => {
+  nsfwClick = () => {
     let currentState = this.state;
-    if(!this.state.nsfw){
-    this.setState({ nsfw: true })
-  } else {
-    this.setState({ nsfw: false })
-  }
-  }
+      if(!this.state.nsfw){
+        this.setState({ nsfw: true })
+      } else {
+        this.setState({ nsfw: false })
+      }
+    }
 
-  spoilerClick = (e) => {
+  spoilerClick = () => {
     let currentState = this.state;
-    if(!this.state.spoiler){
-    this.setState({ spoiler: true })
-  } else {
-    this.setState({ spoiler: false })
-  }
-  }
+      if(!this.state.spoiler){
+        this.setState({ spoiler: true })
+      } else {
+        this.setState({ spoiler: false })
+      }
+    }
+
   handleSubmitState = () => {
     let currentState = this.state;
-    if(this.state.submitEnabled) {
-      this.setState({ submitEnabled: false })
-    } else {
-      this.setState({ submitEnabled: true })
+      if(this.state.submitEnabled) {
+        this.setState({ submitEnabled: false })
+      } else {
+        this.setState({ submitEnabled: true })
+      }
     }
-  }
 
   handlePostSubmit = (e) => {
     const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.state;
@@ -95,7 +97,6 @@ class PostForm extends Component {
 
     return(
       <>
-      {!this.state.isValid ? this.postSubmit.disabled : this.postSubmit.enabled}
 
         <div className='submit_post_containers_container'>
             <form className='submit_post_container'>
@@ -164,9 +165,9 @@ class PostForm extends Component {
 
       </>
     )
-  }) 
+  } 
   }
-}
+
 
 
 export default PostForm;
