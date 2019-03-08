@@ -88,10 +88,10 @@ class PostForm extends Component {
             <form className='submit_post_container'>
               <span className='create_post_text'>Create a post</span>
               <br />
-              <select className='choose_community_dropdown'>
+              <select onChange={this.handlePostInput} className='choose_community_dropdown'>
                 <option>Choose a community</option>
                 <option>Prolly Won't be a Select Element</option>
-                <option>Prolly Won't be a Select Element</option>
+                <option>Prolly Won't be a Select Element1</option>
                 <option>Prolly Won't be a Select Element</option>
                 <option>Prolly Won't be a Select Element</option>
               </select>
