@@ -2,31 +2,48 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import * as util from '../../utils/apiCalls.js';
 import { ClearState } from './postCall.jsx';
-import { PostIsValid } from '/postIsValid.jsx';
+import { PostIsValid } from './postIsValid.jsx';
+import { ErrorModal } from './errorModal.jsx';
+import Posts from './posts.jsx';
+
 
 import '../../css/posts/createPost.css';
 
 
 class PostForm extends Component {
+  // state = {
+  //   subfriggit: '',
+  //   post: {
+  //     title_input: '',
+  //     text_input: ''
+  //   },
+  //   img_vid: {
+  //     title_input: '',
+  //     img_vid_src: ''
+  //   },
+  //   link_: {
+  //     title_input: '',
+  //     url: ''
+  //   },
+  //   oc: false,
+  //   spoiler: false,
+  //   nsfw: false,
+  //   isValid: false,
+  //   submitEnabled: false
+  // };
   state = {
-    subfriggit: '',
-    post: {
-      title_input: '',
-      text_input: ''
-    },
-    img_vid: {
-      title_input: '',
-      img_vid_src: ''
-    },
-    link_: {
-      title_input: '',
-      url: ''
-    },
-    oc: false,
-    spoiler: false,
-    nsfw: false,
-    isValid: false,
-    submitEnabled: false
+    submit_post: false,
+    errorModalIsOpen: false
+
+  }
+
+  openModal = (event) => {
+    let currentState = this.state;
+    this.setState({ [event.target.name]: !currentState })
+  };
+
+  closeModal = (event) => {
+    this.setState({ [event.target.name]: false })
   };
 
   handlePostInput = (e) => {
@@ -36,8 +53,8 @@ class PostForm extends Component {
 
 // HACKY AF BUT WORKS
   ocClick = () => {
-    let currentState = this.state;
-      if(!this.state.oc){
+    let currentState = this.props;
+      if(!this.props.oc){
         this.setState({ oc: true })
       } else {
         this.setState({ oc: false })
@@ -45,8 +62,8 @@ class PostForm extends Component {
     }
 
   nsfwClick = () => {
-    let currentState = this.state;
-      if(!this.state.nsfw){
+    let currentState = this.props;
+      if(!this.props.nsfw){
         this.setState({ nsfw: true })
       } else {
         this.setState({ nsfw: false })
@@ -54,8 +71,8 @@ class PostForm extends Component {
     }
 
   spoilerClick = () => {
-    let currentState = this.state;
-      if(!this.state.spoiler){
+    let currentState = this.props;
+      if(!this.props.spoiler){
         this.setState({ spoiler: true })
       } else {
         this.setState({ spoiler: false })
@@ -63,26 +80,26 @@ class PostForm extends Component {
     }
 
   handleSubmitState = () => {
-    let currentState = this.state;
-      if(this.state.submitEnabled) {
+    let currentState = this.props;
+      if(this.props.submitEnabled) {
         this.setState({ submitEnabled: false })
       } else {
         this.setState({ submitEnabled: true })
       }
     }
 
-  handlePostSubmit = (e) => {
-    const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.state;
+  handlePostSubmit = () => {
+    const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.props;
 
-    if(post.title_input || subfriggit){
+    if(post.title_input && subfriggit){
       util.createNewPost({
-        title: post.title_input,
-        post: post.text_input,
-        thumbnail: img_vid.img_vid_src,
-        _link: link_.url,
-        oc: oc,
-        nsfw: nsfw,
-        spoiler: spoiler
+        title: post.title_input.value,
+        post: post.text_input.value,
+        thumbnail: img_vid.img_vid_src.value,
+        _link: link_.url.value,
+        oc: oc.value,
+        nsfw: nsfw.value,
+        spoiler: spoiler.value
       })
       .then(() => {
         util.getAllPosts()
@@ -93,13 +110,14 @@ class PostForm extends Component {
 
   render() {
     console.log(this.state)
+    console.log(this.props)
 
 
     return(
       <>
 
         <div className='submit_post_containers_container'>
-            <form className='submit_post_container'>
+            <form className='submit_post_container'  onSubmit={this.handlePostSubmit}>
               <span className='create_post_text'>Create a post</span>
               <br />
               <select onChange={this.handlePostInput} className='choose_community_dropdown'>
@@ -111,7 +129,7 @@ class PostForm extends Component {
               </select>
               <br />
 
-            <div className='post_box' onSubmit={this.handlePostSubmit}>
+            <div className='post_box'>
 
               <div className='post_options'>
                 <div name='post' id='post'>Post</div>
@@ -153,7 +171,8 @@ class PostForm extends Component {
                     type='button'
                     id='submit_post'
                     value='POST'
-
+                    name='errorModalIsOpen'
+                    onClick={this.state.errorModalIsOpen ? this.closeModal : null}
                     />
                 </div>
               </div>
@@ -162,6 +181,13 @@ class PostForm extends Component {
           </form>
         </div>
             <div className='rules_policy_container'></div>
+
+              <ErrorModal
+
+                isOpen={this.state.errorModalIsOpen}
+                openLoginModal={this.openModal}
+                closeLoginModal={this.closeModal}
+                />
 
       </>
     )
