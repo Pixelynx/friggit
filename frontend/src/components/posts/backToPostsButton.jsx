@@ -10,7 +10,7 @@ export const BackToPostsButton = ({ post_title_input, subfriggit, isValid, handl
           type='submit'
           className='back_to_post'
           value='POST'
-          onClick={handlePostSubmit}/>
+          />
       </Link>
     </div> : null}
     </>

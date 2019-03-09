@@ -76,11 +76,21 @@ class PostForm extends Component {
       }
     }
 
-    // END OF HACKINESS 
+    // END OF HACKINESS
 
   handlePostSubmit = (e) => {
     e.preventDefault();
-    const { isValid, post_title_input, img_vid_src, link_url, post_text_input, subfriggit, oc, nsfw, spoiler, img_vid_title_input, link_title_input } = this.props;
+    const { isValid,
+      post_title_input,
+      img_vid_src,
+      link_url,
+      post_text_input,
+      subfriggit,
+      oc,
+      nsfw,
+      spoiler,
+      img_vid_title_input,
+      link_title_input } = this.state;
 
     if(post_title_input && subfriggit){
       util.createNewPost({
@@ -92,11 +102,11 @@ class PostForm extends Component {
         nsfw: nsfw.value,
         spoiler: spoiler.value
       })
-      .then(() => {
-        util.getAllPosts()
+      .then((res) => {
+        console.log(res)
       })
-      .catch(err => console.log(err))
-    } else console.log("you're an idiot")
+      .catch(err => console.log('You suck', err))
+    } else if(post_title_input && subfriggit) {console.log(typeof subfriggit, 'You suck harder')}
   }
 
   render() {
