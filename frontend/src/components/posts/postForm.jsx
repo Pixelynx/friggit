@@ -76,6 +76,8 @@ class PostForm extends Component {
       }
     }
 
+    // END OF HACKINESS 
+
   handlePostSubmit = (e) => {
     e.preventDefault();
     const { isValid, post_title_input, img_vid_src, link_url, post_text_input, subfriggit, oc, nsfw, spoiler, img_vid_title_input, link_title_input } = this.props;
@@ -99,6 +101,7 @@ class PostForm extends Component {
 
   render() {
     const { subfriggit, post_title_input, isValid } = this.state;
+    console.log(this.state)
 
     return(
       <>
@@ -138,9 +141,9 @@ class PostForm extends Component {
                 <br />
               <input
                 type='text'
-                name='post_text_box'
-                value={this.state.post_text_box}
-                className='post_text_box'
+                name='post_text_input'
+                value={this.state.post_text_input}
+                className='post_text_input'
                 placeholder='Text (optional)'
                 onChange={this.handlePostInput}
                 />
@@ -159,10 +162,11 @@ class PostForm extends Component {
                 </div>
                 <div className='draft_post'>
                   <input type='button' id='draft' value='SAVE DRAFT' />
-                  <BackToPostsButton
-                    isValid={this.state.isValid}
-                    post_title_input={this.state.post_title_input}
-                    subfriggit={this.state.subfriggit}/>
+
+                    <BackToPostsButton
+                      isValid={this.state.isValid}
+                      post_title_input={this.state.post_title_input}
+                      subfriggit={this.state.subfriggit}/>
                 </div>
               </div>
             <div className='post_notif'></div>
