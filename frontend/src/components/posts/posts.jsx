@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import PostsForm from './postForm.jsx';
+import { DisplayPosts } from './displayPosts.jsx';
 import * as util from '../../utils/apiCalls.js';
 
 import '../../css/posts/allPosts.css';
@@ -11,29 +12,23 @@ class Posts extends Component {
   }
 
   componentDidMount = () => {
-    util.getAllPosts()
-    .then((res) => {
-      let posts = res.data.posts
-      posts.map(post => {
-      this.state.posts.push(post)
-      this.displayPosts()
-    })
+    this.makeArr()
+  }
+
+  makeArr = () => {
+    axios.get('/posts')
+    .then(res => {
+      this.setState({ posts: res.data.posts })
     })
   }
 
-  displayPosts = () => {
-    let allPosts = this.state.posts.map(post => {
-      return (<div className='post'>{post.title}</div>)
+  fetchPosts = () => {
+    axios.get('/posts')
+    .then(res => {
+      this.setState({ posts: res.data })
     })
-    if(!this.state.posts) {
-      return(
-        <div className='no_posts'>No posts yet.</div>
-      )
-    } else {
-      return allPosts
-    }
+    .catch(err => console.log(err))
   }
-
 
 
   render() {
@@ -42,6 +37,7 @@ class Posts extends Component {
 
     return(
       <>
+        <DisplayPosts/>
         </>
     )
   }
