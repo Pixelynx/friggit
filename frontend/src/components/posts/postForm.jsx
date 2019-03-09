@@ -15,18 +15,12 @@ import '../../css/posts/createPost.css';
 class PostForm extends Component {
   state = {
     subfriggit: '',
-    post: {
-      title_input: '',
-      text_input: ''
-    },
-    img_vid: {
-      title_input: '',
-      img_vid_src: ''
-    },
-    link_: {
-      title_input: '',
-      url: ''
-    },
+      post_title_input: '',
+      post_text_input: '',
+      img_vid_title_input: '',
+      img_vid_src: '',
+      link_title_input: '',
+      link_url: '',
     oc: false,
     spoiler: false,
     nsfw: false,
@@ -35,6 +29,8 @@ class PostForm extends Component {
     errorModalIsOpen: false
 
   }
+
+// HACKY AF BUT WORKS
 
   openModal = (event) => {
     let currentState = this.state;
@@ -49,21 +45,13 @@ class PostForm extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  togglePostValid = () => {
-    const { subfriggit, post, isValid } = this.state;
-    let currentState = this.state;
-    if(!post.text_input || !subfriggit) {
-      this.setState({ isValid: false })
-    } else {
-      this.setState({ isValid: true })
-    }
-    return isValid
+  handleSubfriggitSelect = (e) => {
+    this.setState({ subfriggit: e.target.value })
   }
 
-// HACKY AF BUT WORKS
   ocClick = () => {
-    let currentState = this.props;
-      if(!this.props.oc){
+    let currentState = this.state;
+      if(!this.state.oc){
         this.setState({ oc: true })
       } else {
         this.setState({ oc: false })
@@ -71,8 +59,8 @@ class PostForm extends Component {
     }
 
   nsfwClick = () => {
-    let currentState = this.props;
-      if(!this.props.nsfw){
+    let currentState = this.state;
+      if(!this.state.nsfw){
         this.setState({ nsfw: true })
       } else {
         this.setState({ nsfw: false })
@@ -80,8 +68,8 @@ class PostForm extends Component {
     }
 
   spoilerClick = () => {
-    let currentState = this.props;
-      if(!this.props.spoiler){
+    let currentState = this.state;
+      if(!this.state.spoiler){
         this.setState({ spoiler: true })
       } else {
         this.setState({ spoiler: false })
@@ -90,14 +78,14 @@ class PostForm extends Component {
 
   handlePostSubmit = (e) => {
     e.preventDefault();
-    const { isValid, post, subfriggit, oc, nsfw, spoiler, img_vid, link_ } = this.props;
+    const { isValid, post_title_input, img_vid_src, link_url, post_text_input, subfriggit, oc, nsfw, spoiler, img_vid_title_input, link_title_input } = this.props;
 
-    if(post.title_input && subfriggit){
+    if(post_title_input && subfriggit){
       util.createNewPost({
-        title: post.title_input.value,
-        post: post.text_input.value,
-        thumbnail: img_vid.img_vid_src.value,
-        _link: link_.url.value,
+        title: post_title_input.value,
+        post: post_text_input.value,
+        thumbnail: img_vid_src.value,
+        _link: link_url.value,
         oc: oc.value,
         nsfw: nsfw.value,
         spoiler: spoiler.value
@@ -110,18 +98,19 @@ class PostForm extends Component {
   }
 
   render() {
-    const { subfriggit, post, isValid } = this.state;
-    console.log(this.state)
-    console.log(this.props)
+    const { subfriggit, post_title_input, isValid } = this.state;
 
     return(
       <>
-      this.togglePostValid()
+
         <div className='submit_post_containers_container'>
             <form className='submit_post_container'  onSubmit={this.handlePostSubmit}>
               <span className='create_post_text'>Create a post</span>
               <br />
-              <select onChange={this.handlePostInput} className='choose_community_dropdown'>
+              <select
+                onChange={this.handleSubfriggitSelect}
+                className='choose_community_dropdown'
+                value={this.state.subfriggit}>
                 <option>Choose a community</option>
                 <option>Prolly Won't be a Select Element</option>
                 <option>Prolly Won't be a Select Element1</option>
@@ -140,7 +129,8 @@ class PostForm extends Component {
 
               <input
                 type='text'
-                name='title_input'
+                name='post_title_input'
+                value={this.state.post_title_input}
                 className='title_input'
                 placeholder='Title'
                 onChange={this.handlePostInput}
@@ -149,6 +139,7 @@ class PostForm extends Component {
               <input
                 type='text'
                 name='post_text_box'
+                value={this.state.post_text_box}
                 className='post_text_box'
                 placeholder='Text (optional)'
                 onChange={this.handlePostInput}
@@ -168,7 +159,10 @@ class PostForm extends Component {
                 </div>
                 <div className='draft_post'>
                   <input type='button' id='draft' value='SAVE DRAFT' />
-                  <BackToPostsButton />
+                  <BackToPostsButton
+                    isValid={this.state.isValid}
+                    post_title_input={this.state.post_title_input}
+                    subfriggit={this.state.subfriggit}/>
                 </div>
               </div>
             <div className='post_notif'></div>
@@ -183,6 +177,7 @@ class PostForm extends Component {
                 openLoginModal={this.openModal}
                 closeLoginModal={this.closeModal}
                 />
+
 
       </>
     )
