@@ -94,7 +94,7 @@ class PostForm extends Component {
       nsfw,
       spoiler} = this.state
 
-    
+
 
     if(post_title_input && subfriggit) {
       this.setState({ isValid: true })
@@ -114,9 +114,9 @@ class PostForm extends Component {
       .then((res) => {
         console.log(res, 'hello world')
       })
-      .catch(err => console.log('You suck', err))
+      .catch(err => console.log(err))
     } else {
-      console.log(typeof subfriggit, 'You suck harder')
+      console.log('You suck harder')
     }
     }
 
