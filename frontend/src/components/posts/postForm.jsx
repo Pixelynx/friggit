@@ -24,7 +24,7 @@ class PostForm extends Component {
     oc: false,
     spoiler: false,
     nsfw: false,
-    isValid: true,
+    isValid: false,
     submitEnabled: false,
     errorModalIsOpen: false,
     completed: false
@@ -94,6 +94,8 @@ class PostForm extends Component {
       nsfw,
       spoiler} = this.state
 
+    
+
     if(post_title_input && subfriggit) {
       this.setState({ isValid: true })
     }
@@ -117,18 +119,6 @@ class PostForm extends Component {
       console.log(typeof subfriggit, 'You suck harder')
     }
     }
-
-    validatePostAndRedirect = () => {
-      const { subfriggit, post_title_input, isValid } = this.state
-      if(subfriggit && post_title_input) {
-        this.setState({ isValid: true })
-      } else {
-        console.log('err')
-      }
-    }
-
-
-
 
 
   render() {

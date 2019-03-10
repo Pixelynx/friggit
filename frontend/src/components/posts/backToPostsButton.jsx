@@ -7,7 +7,7 @@ export const BackToPostsButton = ({ post_title_input, subfriggit, isValid, handl
     <div className='back_to_post_container'>
       <Link to='/posts'>
         <input
-          type='button'
+          type='submit'
           className='back_to_post'
           value='POST'
           />
