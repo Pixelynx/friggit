@@ -116,7 +116,7 @@ class PostForm extends Component {
       })
       .catch(err => console.log(err))
     } else {
-      console.log('You suck harder')
+      console.log('Not working')
     }
     }
 
