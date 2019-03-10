@@ -1,14 +1,14 @@
 import React from 'react';
 
-export const PostIsValid = ({ isValid }) => {
+export const PostIsValid = (props) => {
+  const { title, subfriggit, isValid, post_text_input } = this.props
   return(
     <>
-        {isValid ?
-          <div className='post_text_box'>Eww</div>
-          : null
+        {this.props.title && this.props.subfriggit ?
+          this.props.setState({ isValid: 'true' }) : null
         }
 
     </>
 )
-  
+
 };

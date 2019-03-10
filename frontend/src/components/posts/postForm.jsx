@@ -24,13 +24,15 @@ class PostForm extends Component {
     oc: false,
     spoiler: false,
     nsfw: false,
-    isValid: false,
+    isValid: true,
     submitEnabled: false,
-    errorModalIsOpen: false
+    errorModalIsOpen: false,
+    completed: false
 
   }
 
 // HACKY AF BUT WORKS
+
 
   openModal = (event) => {
     let currentState = this.state;
@@ -80,19 +82,24 @@ class PostForm extends Component {
 
   handlePostSubmit = (e) => {
     e.preventDefault();
-    const { isValid,
+    const {
       post_title_input,
-      img_vid_src,
-      link_url,
       post_text_input,
       subfriggit,
+      isValid,
+      img_vid_src,
+      link_url,
+      completed,
       oc,
       nsfw,
-      spoiler,
-      img_vid_title_input,
-      link_title_input } = this.state;
+      spoiler} = this.state
 
-    if(post_title_input && subfriggit){
+    if(post_title_input && subfriggit) {
+      this.setState({ isValid: true })
+    }
+
+    if(isValid){
+
       util.createNewPost({
         title: post_title_input.value,
         post: post_text_input.value,
@@ -103,15 +110,32 @@ class PostForm extends Component {
         spoiler: spoiler.value
       })
       .then((res) => {
-        console.log(res)
+        console.log(res, 'hello world')
       })
       .catch(err => console.log('You suck', err))
-    } else if(post_title_input && subfriggit) {console.log(typeof subfriggit, 'You suck harder')}
-  }
+    } else {
+      console.log(typeof subfriggit, 'You suck harder')
+    }
+    }
+
+    validatePostAndRedirect = () => {
+      const { subfriggit, post_title_input, isValid } = this.state
+      if(subfriggit && post_title_input) {
+        this.setState({ isValid: true })
+      } else {
+        console.log('err')
+      }
+    }
+
+
+
+
 
   render() {
     const { subfriggit, post_title_input, isValid } = this.state;
     console.log(this.state)
+
+
 
     return(
       <>
@@ -147,6 +171,7 @@ class PostForm extends Component {
                 className='title_input'
                 placeholder='Title'
                 onChange={this.handlePostInput}
+
                 />
                 <br />
               <input
@@ -174,7 +199,6 @@ class PostForm extends Component {
                   <input type='button' id='draft' value='SAVE DRAFT' />
 
                     <BackToPostsButton
-                      isValid={this.state.isValid}
                       post_title_input={this.state.post_title_input}
                       subfriggit={this.state.subfriggit}/>
                 </div>
@@ -182,22 +206,17 @@ class PostForm extends Component {
             <div className='post_notif'></div>
             </div>
           </form>
+
         </div>
             <div className='rules_policy_container'></div>
 
-              <ErrorModal
 
-                isOpen={this.state.errorModalIsOpen}
-                openLoginModal={this.openModal}
-                closeLoginModal={this.closeModal}
-                />
 
 
       </>
     )
   } 
-  }
-
+}
 
 
 export default PostForm;
