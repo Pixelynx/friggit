@@ -96,25 +96,21 @@ class PostForm extends Component {
 
 
 
-    if(post_title_input && subfriggit) {
-      this.setState({ isValid: true })
-    }
 
-    if(isValid){
+    if(post_title_input && subfriggit){
 
-      util.createNewPost({
-        title: post_title_input.value,
-        post: post_text_input.value,
-        thumbnail: img_vid_src.value,
-        _link: link_url.value,
-        oc: oc.value,
-        nsfw: nsfw.value,
-        spoiler: spoiler.value
+      axios.post('/posts', {
+        title: post_title_input,
+        post: post_text_input,
+        _link: link_url,
+        oc: oc,
+        nsfw: nsfw,
+        spoiler: spoiler
       })
-      .then((res) => {
-        console.log(res, 'hello world')
+      .then(() => {
+        console.log('hello world')
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err.res))
     } else {
       console.log('Not working')
     }

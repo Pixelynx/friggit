@@ -35,7 +35,6 @@ CREATE TABLE posts (
   post TEXT,
   page_id INT REFERENCES sub_friggits(id) ON DELETE CASCADE,
   _link VARCHAR,
-  thumbnail VARCHAR,
   oc BOOLEAN,
   nsfw BOOLEAN,
   spoiler BOOLEAN

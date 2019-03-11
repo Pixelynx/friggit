@@ -1,8 +1,14 @@
 
+.no_posts {
+  color: white;
+}
+
 .post{
   color: white;
   background-color: red;
 }
-.no_posts {
+
+.title {
   color: white;
+  background-color: pink;
 }

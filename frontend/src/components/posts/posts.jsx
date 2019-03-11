@@ -18,7 +18,7 @@ class Posts extends Component {
   fetchPosts = () => {
     axios.get('/posts')
     .then(res => {
-      this.setState({ posts: res.data.posts })
+      this.setState({ posts: res.data.body })
     })
    }
 
@@ -34,6 +34,7 @@ class Posts extends Component {
         {posts.map((post) => {
           return (
             <>
+            <div className='title'>{post.title}</div>
             <div
             key={post.id}
             className='post'>{post.body}

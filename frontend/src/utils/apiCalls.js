@@ -4,4 +4,4 @@ import axios from 'axios';
 export const getAllPosts = (posts) => axios.get('/posts', posts);
 
 //POST
-export const createNewPost = (post) => axios.post(`/posts`, post);
+export const createNewPost = (post) => axios.post(`/posts/submit`, post);
