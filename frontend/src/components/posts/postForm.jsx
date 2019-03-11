@@ -98,7 +98,7 @@ class PostForm extends Component {
 
 
     if(post_title_input && subfriggit){
-
+      let redirect = '/posts';
       axios.post('/posts', {
         title: post_title_input,
         post: post_text_input,
@@ -108,7 +108,7 @@ class PostForm extends Component {
         spoiler: spoiler
       })
       .then(() => {
-        console.log('hello world')
+        window.location = redirect;
       })
       .catch(err => console.log(err.res))
     } else {

@@ -25,7 +25,6 @@ class Posts extends Component {
 
   render() {
     const { posts } = this.state;
-    console.log(this.state)
     let idGen;
 
     return(
@@ -37,7 +36,7 @@ class Posts extends Component {
             <div className='title'>{post.title}</div>
             <div
             key={post.id}
-            className='post'>{post.body}
+            className='post'>{post.post}
             </div>
             </>)
         })
@@ -51,22 +50,3 @@ class Posts extends Component {
 
 
 export default Posts;
-
-
-// if(post_title_input && subfriggit){
-//
-//   util.createNewPost({
-//     title: post_title_input.value,
-//     post: post_text_input.value,
-//     thumbnail: img_vid_src.value,
-//     _link: link_url.value,
-//     oc: oc.value,
-//     nsfw: nsfw.value,
-//     spoiler: spoiler.value
-//   })
-//   .then((res) => {
-//     console.log(res, 'hello world')
-//   })
-//   .catch(err => console.log('You suck', err))
-// } else {console.log(typeof subfriggit, 'You suck harder')}
-// }
