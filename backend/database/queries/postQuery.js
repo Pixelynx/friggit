@@ -31,6 +31,9 @@ module.exports = {
           message: 'New post created'
         })
       }).catch(err => console.log(err))
-  }
+  },
 
+  getCommentsForPost: (req, res, next) => {
+    db.any
+  }
 }
