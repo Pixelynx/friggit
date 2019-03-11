@@ -24,7 +24,6 @@ class PostForm extends Component {
     oc: false,
     spoiler: false,
     nsfw: false,
-    isValid: false,
     submitEnabled: false,
     errorModalIsOpen: false,
     completed: false
@@ -86,16 +85,12 @@ class PostForm extends Component {
       post_title_input,
       post_text_input,
       subfriggit,
-      isValid,
       img_vid_src,
       link_url,
       completed,
       oc,
       nsfw,
       spoiler} = this.state
-
-
-
 
     if(post_title_input && subfriggit){
       let redirect = '/posts';
@@ -114,14 +109,11 @@ class PostForm extends Component {
     } else {
       console.log('Not working')
     }
-    }
+  }
 
 
   render() {
-    const { subfriggit, post_title_input, isValid } = this.state;
-    console.log(this.state)
-
-
+    const { subfriggit, post_title_input} = this.state;
 
     return(
       <>
