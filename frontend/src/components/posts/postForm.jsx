@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import * as util from '../../utils/apiCalls.js';
-import { ClearState } from './postCall.jsx';
-import { PostIsValid } from './postIsValid.jsx';
-import { ErrorModal } from './errorModal.jsx';
 import { BackToPostsButton } from './backToPostsButton.jsx';
 import Posts from './posts.jsx';
 
